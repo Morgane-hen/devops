@@ -3,23 +3,34 @@
   <groupId>devops</groupId>
   <artifactId>devops</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+  	<maven.compiler.source>15</maven.compiler.source>
+	<maven.compiler.target>15</maven.compiler.target>
+  </properties>
+  
+  
   <build>
     <sourceDirectory>DevopsProjet/src</sourceDirectory>
+    <directory>${basedir}/target</directory>
     <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <release>13</release>
-        </configuration>
-      </plugin>
+    
+    	 <plugin>
+    	 	<groupId>org.apache.maven.plugins</groupId>
+        	<artifactId>maven-compiler-plugin</artifactId>
+        	<version>3.8.1</version>
+      	</plugin>
+      	
     </plugins>
   </build>
+  
   <dependencies>
+  
   	<dependency>
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
   		<version>4.13</version>
   	</dependency>
+  	
   </dependencies>
 </project>

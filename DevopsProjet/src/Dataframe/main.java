@@ -8,12 +8,12 @@ public class main {
 		ArrayList<Integer> colonne1 = new ArrayList<Integer>();
 		colonne1.add(1);
 		colonne1.add(2);
-		Colonne c = new Colonne(colonne1);
+		Colonne<Integer> c = new Colonne(colonne1, "col1");
 		
 		ArrayList<String> colonne2 = new ArrayList<String>();
 		colonne2.add("Pomme");
 		colonne2.add("Poire");
-		Colonne c2 = new Colonne(colonne2);
+		Colonne<String> c2 = new Colonne(colonne2, "col2");
 		
 		//Dataframe
 		Dataframe data = new Dataframe();
