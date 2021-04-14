@@ -1,1 +1,2 @@
-/target/
+#ignore les fichiers de compile dans le dossier target situé à la racine
+/target/*.class
