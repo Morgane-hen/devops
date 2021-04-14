@@ -1,9 +1,7 @@
 package test;
 
 import org.junit.*;
-
-import CUP.AST.Bool;
-import Dataframe.Colonne;
+import Dataframe.*;
 
 import static org.junit.Assert.*;
 

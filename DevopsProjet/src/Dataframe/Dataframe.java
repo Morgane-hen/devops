@@ -1,12 +1,12 @@
 package Dataframe;
 
 import java.util.ArrayList;
+import Dataframe.*;
 import java.util.*;
 
 public class Dataframe {
 
-	
-	private ArrayList<Colonne> dataframe;
+	private ArrayList<Colonne<Object>> dataframe;
 	static int cpt_colonne = 0;
 	
 	/*
@@ -14,13 +14,13 @@ public class Dataframe {
 	 */
 	public Dataframe()
 	{
-		dataframe = new ArrayList<Colonne>();
+		dataframe = new ArrayList<Colonne<Object>>();
 	}
 	
 	/*
 	 * cr�ation d'une dataframe � partir d'un tableau contenant les objets souhait�s
 	 */
-	public Dataframe(ArrayList<Colonne> _dataframe)
+	public Dataframe(ArrayList<Colonne<Object>> _dataframe)
 	{
 		this.dataframe = _dataframe;
 		cpt_colonne = _dataframe.size();
@@ -29,10 +29,10 @@ public class Dataframe {
 	/*
 	 * @param  colonne : arrayList contenant les objets de la colonne
 	 */
-	public void addColonne(Colonne colonne)
+	public void addColonne(Colonne<Object> colonne)
 	{
 		//ajout d'une colonne
-		dataframe.add(colonne);
+		this.dataframe.add(colonne);
 		cpt_colonne++;
 	}
 	
