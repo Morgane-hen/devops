@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ab0b26a-4944-41ac-9239-aec727630347" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/devops.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/devops.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevopsProjet/bin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevopsProjet/bin/Dataframe/Dataframe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevopsProjet/bin/Dataframe/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevopsProjet/src/Dataframe/Colonne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevopsProjet/src/Dataframe/Dataframe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevopsProjet/src/Dataframe/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevopsProjet/src/test/ColonneTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +49,13 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fx730\Documents\Univ\M1S2_Devops\devopsProjet\src\test\java" />
+      <recent name="C:\Users\fx730\Documents\Univ\M1S2_Devops\devopsProjet\src\main\java" />
+      <recent name="C:\Users\fx730\Documents\Univ\M1S2_Devops\devopsProjet\src\main" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="15" />
@@ -45,15 +66,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -73,6 +92,7 @@
       <workItem from="1617952206249" duration="31000" />
       <workItem from="1618382152516" duration="1905000" />
       <workItem from="1618389273065" duration="2544000" />
+      <workItem from="1618508918335" duration="726000" />
     </task>
     <servers />
   </component>
