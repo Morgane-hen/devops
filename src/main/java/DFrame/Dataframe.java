@@ -1,8 +1,6 @@
-package Dataframe;
+package DFrame;
 
 import java.util.ArrayList;
-import Dataframe.*;
-import java.util.*;
 
 public class Dataframe<E> {
 

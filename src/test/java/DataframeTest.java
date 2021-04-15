@@ -1,15 +1,13 @@
-package Tests;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-import Dataframe.Colonne;
-import Dataframe.Dataframe;
+import DFrame.Colonne;
+import DFrame.Dataframe;
 
-class DataframeTests {
+class DataframeTest {
 
 	@Test
 	void ConstructeurTest() {
@@ -41,7 +39,7 @@ class DataframeTests {
 	void getDataframeTest() {
 		Dataframe d = new Dataframe();
 		d.addColonne(new Colonne(new ArrayList<String>(), "colonne"));
-		assertEquals(d.getDataframe().isEmpty(), false, "la dataframe contiens une colonne");
+		assertFalse(d.getDataframe().isEmpty(), "la dataframe contiens une colonne");
 	}
 	
 	@Test

@@ -1,14 +1,12 @@
-package Tests;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-import Dataframe.Colonne;
+import DFrame.Colonne;
 
-class ColonneTests {
+class ColonneTest {
 	
 	@Test
 	void ConstructeurTest() {
