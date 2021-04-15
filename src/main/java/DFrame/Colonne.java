@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Colonne<E> {
 
-	private ArrayList<E> colonne;
+	private final ArrayList<E> colonne;
 	private String label = "";
 	private String type = ""; //A reflechir
 	
@@ -13,7 +13,7 @@ public class Colonne<E> {
 	 */
 	public Colonne()
 	{
-		this.colonne = new ArrayList<E>();
+		this.colonne = new ArrayList<>();
 	}
 	
 	/*
@@ -66,15 +66,15 @@ public class Colonne<E> {
 	 * Affiche le contenu d'une coone et son label
 	 * */
 	public void afficheColone() {
-		String affichage = this.label + " => ";
+		StringBuilder affichage = new StringBuilder(this.label + " => ");
 		for (int i=0; i<colonne.size(); i++) {
 			if(i == 0)
 			{
-				affichage += "elem: "+colonne.get(i)+ "\n";
+				affichage.append("elem: ").append(colonne.get(i)).append("\n");
 			}
 			else
 			{
-				affichage+="	elem: "+colonne.get(i)+ "\n";
+				affichage.append("	elem: ").append(colonne.get(i)).append("\n");
 			}
 			
 		}
