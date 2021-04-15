@@ -1,8 +1,14 @@
-# Compiled class file
-*.class
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
 
 # Log file
 *.log
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
 
 # BlueJ files
 *.ctxt
@@ -25,7 +31,26 @@
 .classpath
 .project
 .settings
+.vs/
+
+# Compiled class file
+*.class
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Tt]arget/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Pp]ublish/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/bin/
+
+#Custom
