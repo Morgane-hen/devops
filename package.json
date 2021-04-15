@@ -1,0 +1,19 @@
+{
+  "name": "devopsprojet",
+  "version": "1.0.0",
+  "description": "projet final",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Morgane-hen/devopsProjet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Morgane-hen/devopsProjet/issues"
+  },
+  "homepage": "https://github.com/Morgane-hen/devopsProjet#readme"
+}
