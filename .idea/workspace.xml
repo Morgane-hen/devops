@@ -5,22 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ab0b26a-4944-41ac-9239-aec727630347" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/devops.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/devops.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevopsProjet/bin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevopsProjet/bin/Dataframe/Dataframe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevopsProjet/bin/Dataframe/main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevopsProjet/src/Dataframe/Colonne.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevopsProjet/src/Dataframe/Dataframe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevopsProjet/src/Dataframe/main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevopsProjet/src/test/ColonneTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dataframe/Colonne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dataframe/Colonne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dataframe/Dataframe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dataframe/Dataframe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dataframe/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dataframe/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ColonneTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +37,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
@@ -92,7 +84,7 @@
       <workItem from="1617952206249" duration="31000" />
       <workItem from="1618382152516" duration="1905000" />
       <workItem from="1618389273065" duration="2544000" />
-      <workItem from="1618508918335" duration="726000" />
+      <workItem from="1618508918335" duration="1502000" />
     </task>
     <servers />
   </component>

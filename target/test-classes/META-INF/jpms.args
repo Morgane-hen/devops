@@ -1,0 +1,4 @@
+--patch-module
+ProjetDevops=_
+--add-reads
+ProjetDevops=ALL-UNNAMED
