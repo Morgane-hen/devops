@@ -36,7 +36,7 @@
    
    <h3>🟥 7 - Infrastructure-as-code et Cloud</h3>
    
-   <h3>🟨 8 - Insertion de Badges</h3>
+   <h3>🟩 8 - Insertion de Badges</h3>
   <p>
   <img alt="IM2AG" src="https://img.shields.io/badge/IM2AG-Seal%20of%20Quality-blue">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Morgane-hen/devopsProjet"> 
@@ -51,9 +51,11 @@
 
   </p>
     
-   <h3>🟧 9 - Valorisation de votre bibliothèque</h3>
+   <h3>🟨 9 - Valorisation de votre bibliothèque</h3>
+    Site généré par le Readme via un workflow :
+     http://morgane-hen.github.io/devopsProjet
    
-   <h3>🟥 10 - Utilisation d’autres services Github</h3>
+   <h3>🟧 10 - Utilisation d’autres services Github</h3>
    
   <h2>Fonctionnalitées</h2>
   
