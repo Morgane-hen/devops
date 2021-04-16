@@ -38,6 +38,7 @@
    
    <h3>🟨 8 - Insertion de Badges</h3>
   <p>
+  <img alt="IM2AG" src="https://img.shields.io/badge/IM2AG-Seal%20of%20Quality-blue">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Morgane-hen/devopsProjet"> 
   <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/Morgane-hen/devopsProjet/total">
   <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/Morgane-hen/devopsProjet">
