@@ -51,7 +51,7 @@
 
   </p>
     
-   <h3>🟨 9 - Valorisation de votre bibliothèque</h3>
+   <h3>🟩 9 - Valorisation de votre bibliothèque</h3>
     Site généré par le Readme via un workflow :
      http://morgane-hen.github.io/devopsProjet
    
