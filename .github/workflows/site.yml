@@ -1,0 +1,25 @@
+name: Site workflow
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'readme.md'
+
+
+jobs:
+  updatesite:
+    runs-on: ubuntu-latest
+    env: 
+        CONTENT_ENV: variable for site content
+    steps:
+     - name: copy
+       run: CONTENT_ENV=`cat readme.md`
+     - name: checkout
+       run: git checkout gh-pages   
+     - name: paste
+       run: echo CONTENT_ENV >> index.md
+     - name: commit
+       run: git commit -a -m auto_maj_wf
+     - name: push
+       run: git push 
