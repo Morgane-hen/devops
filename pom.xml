@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>IM2AG</groupId>
   <artifactId>devopsProjet</artifactId>
-  <version>0.2-SNAPSHOT</version>
+  <version>0.3-SNAPSHOT</version>
   
   <properties>
   	<maven.compiler.source>15</maven.compiler.source>
