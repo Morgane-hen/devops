@@ -36,9 +36,15 @@
    
    <h3>🟥 7 - Infrastructure-as-code et Cloud</h3>
    
-   <h3>🟧 8 - Insertion de Badges</h3>
+   <h3>🟨 8 - Insertion de Badges</h3>
+    <p>
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Morgane-hen/devopsProjet"> 
+  <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/Morgane-hen/devopsProjet/total">
+  <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/Morgane-hen/devopsProjet">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Morgane-hen/devopsProjet">
+    </p>
     
-   <h3>🟥 9 - Valorisation de votre bibliothèque</h3>
+   <h3>🟧 9 - Valorisation de votre bibliothèque</h3>
    
    <h3>🟥 10 - Utilisation d’autres services Github</h3>
    
