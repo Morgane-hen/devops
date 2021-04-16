@@ -7,7 +7,7 @@
   
  <h2>Outils complétées</h2>
   <h3>🟨 1 - Developpement </h3>
-  Git - GitHub - Maven - Junit - (IntelliJ IDEA code coverage runner)
+  Git - GitHub - Maven - Junit - Scrutinizer
   
   <h3>🟩 2 - Mise en place Github</h3>
   Vous êtes dessus, tout va bien
@@ -37,12 +37,18 @@
    <h3>🟥 7 - Infrastructure-as-code et Cloud</h3>
    
    <h3>🟨 8 - Insertion de Badges</h3>
-    <p>
+  <p>
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Morgane-hen/devopsProjet"> 
   <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/Morgane-hen/devopsProjet/total">
   <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/Morgane-hen/devopsProjet">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Morgane-hen/devopsProjet">
-    </p>
+  <br />
+  <img alt="Scrutinizer Code Quality" src="https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/quality-score.png?b=main">
+  <img alt="Code Coverage" src="https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/coverage.png?b=main">
+  <img alt="Build Status" src="https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/build.png?b=main">
+  <img alt="Code Intelligence Status" src="https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/code-intelligence.svg?b=main">
+
+  </p>
     
    <h3>🟧 9 - Valorisation de votre bibliothèque</h3>
    
