@@ -4,11 +4,18 @@
   <groupId>IM2AG</groupId>
   <artifactId>devopsProjet</artifactId>
   <version>0.2-SNAPSHOT</version>
-  
+
+    <modules>
+        <module>DevopsModule</module>
+    </modules>
+
+    <packaging>pom</packaging>
+
   <properties>
   	<maven.compiler.source>15</maven.compiler.source>
 	<maven.compiler.target>15</maven.compiler.target>
   </properties>
+
 
   <distributionManagement>
    <repository>
@@ -19,8 +26,8 @@
 </distributionManagement>
   
   <build>
-      <sourceDirectory>src/main/java</sourceDirectory>
-      <testSourceDirectory>src/test/java</testSourceDirectory>
+      <sourceDirectory>ProjetDevops/src/main/java</sourceDirectory>
+      <testSourceDirectory>ProjetDevops/src/test/java</testSourceDirectory>
 
     <plugins>
         <!-- Maven builder plugin-->
@@ -39,20 +46,5 @@
 
     </plugins>
   </build>
-  
-  <dependencies>
-      <!-- Junit tests -->
-      <dependency>
-          <groupId>org.junit.platform</groupId>
-          <artifactId>junit-platform-launcher</artifactId>
-          <version>1.7.0</version>
-          <scope>test</scope>
-      </dependency>
-      <dependency>
-          <groupId>org.junit.jupiter</groupId>
-          <artifactId>junit-jupiter-engine</artifactId>
-          <version>5.7.0</version>
-          <scope>test</scope>
-      </dependency>
-  </dependencies>
+
 </project>

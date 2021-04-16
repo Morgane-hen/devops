@@ -1,4 +1,5 @@
-package DFrame;
+import DFrame.Colonne;
+import DFrame.Dataframe;
 
 import java.util.ArrayList;
 
