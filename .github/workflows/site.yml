@@ -3,23 +3,24 @@ name: Site workflow
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'readme.md'
 
 
 jobs:
   updatesite:
     runs-on: ubuntu-latest
-    env: 
-        CONTENT_ENV: variable for site content
     steps:
+     - uses: actions/checkout@v2
      - name: copy
-       run: CONTENT_ENV=`cat readme.md`
-     - name: checkout
-       run: git checkout gh-pages   
+       run: echo "CONTENT_ENV= `cat README.md | tr '\n' ' '` " >> $GITHUB_ENV
+     - name: checkout site branch
+       uses: actions/checkout@v2
+       with:
+        ref: 'gh-pages'
      - name: paste
-       run: echo CONTENT_ENV >> index.md
+       run: echo $CONTENT_ENV > index.md
      - name: commit
-       run: git commit -a -m auto_maj_wf
+       uses: stefanzweifel/git-auto-commit-action@v4
+       with:
+        commit_message: Automatic update ${{ github.run_number }}
      - name: push
        run: git push 
