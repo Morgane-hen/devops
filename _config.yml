@@ -1,1 +1,11 @@
-theme: jekyll-theme-slate
+# Name of website
+title: Projet Devops : WebSite
+
+# Your name to show in the footer
+author: Fx
+
+
+rss-description: Meilleur site ever
+
+
+theme: Architect
