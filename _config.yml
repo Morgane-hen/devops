@@ -1,5 +1,7 @@
+theme: Architect
+
 # Name of website
-title: Projet Devops : WebSite
+title: Projet Devops / Le Site Web
 
 # Your name to show in the footer
 author: Fx
@@ -7,5 +9,3 @@ author: Fx
 
 rss-description: Meilleur site ever
 
-
-theme: Architect
