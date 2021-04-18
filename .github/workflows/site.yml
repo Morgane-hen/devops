@@ -3,7 +3,8 @@ name: Site workflow
 on:
   push:
     branches: [ main ]
-
+    paths:
+      - README.md
 
 jobs:
   updatesite:
