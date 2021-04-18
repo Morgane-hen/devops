@@ -6,9 +6,9 @@ Bibliothèque d’analyse de donnèes en Java. L'objectif est de mettre en place
 
 ## Outils complétées
 
-### 🟨 1 - Developpement
+### 🟩 1 - Developpement
 
-Git - GitHub - Maven - Junit - Scrutinizer
+Git - GitHub - Maven - Junit - Jacoco
 
 ### 🟩 2 - Mise en place Github
 
