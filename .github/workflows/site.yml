@@ -11,13 +11,16 @@ jobs:
     steps:
      - uses: actions/checkout@v2
      - name: copy
-       run: echo "CONTENT_ENV= `cat README.md | tr '\n' ' '` " >> $GITHUB_ENV
+       run: |
+        echo 'CONTENT_ENV<<EOF' >> $GITHUB_ENV
+        cat README.md >> $GITHUB_ENV
+        echo 'EOF' >> $GITHUB_ENV
      - name: checkout site branch
        uses: actions/checkout@v2
        with:
         ref: 'gh-pages'
      - name: paste
-       run: echo $CONTENT_ENV > index.md
+       run: echo "$CONTENT_ENV" > index.md
      - name: commit
        uses: stefanzweifel/git-auto-commit-action@v4
        with:
