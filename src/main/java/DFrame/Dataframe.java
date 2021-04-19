@@ -12,7 +12,7 @@ public class Dataframe<E> {
 	 */
 	public Dataframe()
 	{
-		dataframe = new ArrayList<>();
+		dataframe = new ArrayList<Colonne<E>>();
 	}
 	
 	/*

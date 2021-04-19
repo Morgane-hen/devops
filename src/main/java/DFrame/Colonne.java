@@ -13,7 +13,7 @@ public class Colonne<E> {
 	 */
 	public Colonne()
 	{
-		this.colonne = new ArrayList<>();
+		this.colonne = new ArrayList<E>();
 	}
 	
 	/*
