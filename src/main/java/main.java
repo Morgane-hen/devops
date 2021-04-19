@@ -1,4 +1,5 @@
 import DFrame.Colonne;
+import DFrame.Csv;
 import DFrame.Dataframe;
 
 import java.util.ArrayList;
@@ -86,9 +87,8 @@ public class main {
 		//Statistques sur les dataframes
 		System.out.println("***************************Statistiques de Dataframe********************************");
 
-
-		
-		
-		
+		String chem = "";//chemin vers le csv
+		Csv test = new Csv(chem);
+		test.getData().afficherColonnesDataframe();
 	}
 }

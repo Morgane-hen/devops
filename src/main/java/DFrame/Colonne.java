@@ -24,7 +24,13 @@ public class Colonne<E> {
 		this.colonne = elem;
 		this.label = _label;
 	}
-	
+
+	public Colonne(String _label)
+	{
+		this.colonne = new ArrayList<E>();
+		this.label = _label;
+	}
+
 	/*
 	 * Retourne une colonne 
 	 * */
