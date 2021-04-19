@@ -28,7 +28,7 @@ public class main {
 		colonne2.add("Pamplemouse");
 		colonne2.add("Abricot");
 		Colonne<String> c2 = new Colonne<String>(colonne2, "col2");
-		
+
 		ArrayList<String> colonne3 = new ArrayList<String>();
 		colonne3.add("Haricot");
 		colonne3.add("Chou");
@@ -87,7 +87,7 @@ public class main {
 		//Statistques sur les dataframes
 		System.out.println("***************************Statistiques de Dataframe********************************");
 
-		String chem = "";//chemin vers le csv
+		String chem = "src\\fichiers_Csv\\donnees_test.csv";//chemin vers le csv
 		Csv test = new Csv(chem);
 		test.getData().afficherColonnesDataframe();
 	}

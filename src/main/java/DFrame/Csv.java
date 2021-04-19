@@ -106,43 +106,52 @@ public class Csv {
                     int indice = 0;
                     for (String elem: elems)
                     {
-                        //création d'un nouvel objet en fonction du type de la colonne
-                        switch (type_colonnes[indice])
+                        if(elem.equals(""))
                         {
-                            case "integer":
-                                int elem_bis1 = Integer.parseInt(elem);
-                                data.getColonne(String.valueOf(indice)).addElem(elem_bis1);
-                                break;
+                            //élément vide
+                            data.getColonne(String.valueOf(indice)).addElem(null);
+                        }
+                        else {
+                            //création d'un nouvel objet en fonction du type de la colonne
+                            switch (type_colonnes[indice]) {
+                                case "integer":
+                                    int elem_bis1 = Integer.parseInt(elem);
+                                    data.getColonne(String.valueOf(indice)).addElem(elem_bis1);
+                                    break;
 
-                            case "double":
-                                double elem_bis2 = Double.parseDouble(elem);
-                                data.getColonne(String.valueOf(indice)).addElem(elem_bis2);
-                                break;
+                                case "double":
+                                    double elem_bis2 = Double.parseDouble(elem);
+                                    data.getColonne(String.valueOf(indice)).addElem(elem_bis2);
+                                    break;
 
-                            case "float":
-                                System.out.println("float : "+elem);
-                                float elem_bis3 = Float.parseFloat(elem);
-                                data.getColonne(String.valueOf(indice)).addElem(elem_bis3);
-                                break;
+                                case "float":
+                                    System.out.println("float : " + elem);
+                                    float elem_bis3 = Float.parseFloat(elem);
+                                    data.getColonne(String.valueOf(indice)).addElem(elem_bis3);
+                                    break;
 
-                            case "boolean":
-                                boolean elem_bis4 = Boolean.parseBoolean(elem);
-                                data.getColonne(String.valueOf(indice)).addElem(elem_bis4);
-                                break;
+                                case "boolean":
+                                    //si l'élément n'est pas un booléen, retourne false
+                                    boolean elem_bis4 = Boolean.parseBoolean(elem);
+                                    data.getColonne(String.valueOf(indice)).addElem(elem_bis4);
+                                    break;
 
-                            case "character":
-                                char elem_bis5 = elem.charAt(0);
-                                data.getColonne(String.valueOf(indice)).addElem(elem_bis5);
-                                break;
+                                case "character":
+                                    //peut convertir un nombre en char en prenant le premier chiffre
+                                    char elem_bis5 = elem.charAt(0);
+                                    data.getColonne(String.valueOf(indice)).addElem(elem_bis5);
+                                    break;
 
-                            case "String":
-                                data.getColonne(String.valueOf(indice)).addElem(elem);
-                                break;
+                                case "String":
+                                    //peut convertir n'importe quoi en string
+                                    data.getColonne(String.valueOf(indice)).addElem(elem);
+                                    break;
 
-                            case "unknow":
-                                Object elem_bis7 = elem;
-                                data.getColonne(String.valueOf(indice)).addElem(elem_bis7);
-                                break;
+                                case "unknow":
+                                    Object elem_bis7 = elem;
+                                    data.getColonne(String.valueOf(indice)).addElem(elem_bis7);
+                                    break;
+                            }
                         }
                         indice++;
                     }
