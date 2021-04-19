@@ -65,6 +65,14 @@ public class Colonne<E> {
 	}
 	
 	/*
+	 * Ajoute un element à la colonne
+	 * @param : elem -> element à ajouter
+	 * */
+	public void addElem(int i,E elem) {
+		colonne.add(i, elem);
+	}
+	
+	/*
 	 * Retourne l'element a l'index i
 	 * @param : i -> element à retourner
 	 * */
