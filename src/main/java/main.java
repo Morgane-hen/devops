@@ -60,6 +60,35 @@ public class main {
 		data.afficherDernieresLignes();
 		System.out.println("");
 		System.out.println("***************************Fin de l'affichage****************************************");
+		System.out.println("");
+
+		//Creation d'un dataframe a partir d'un autre
+		System.out.println("***************************Creation d'un Dataframe à partir des colonnes 1 et 2******");
+		ArrayList<String> labels = new ArrayList<String>();
+		labels.add("col1");
+		labels.add("col2");
+		Dataframe newData = data.createNewDataframeFromColonnes(labels);
+		newData.afficherLignesDataframe();
+		System.out.println("");
+		System.out.println("");
+		System.out.println("***************************Creation d'un Dataframe à partir des lignes 3, 5, 7******");
+		ArrayList<Integer> indexs = new ArrayList<Integer>();
+		indexs.add(2); //car on commence le compte à 0
+		indexs.add(4);
+		indexs.add(6);
+		Dataframe anotherData = data.createNewDataframeFromLines(indexs);
+		anotherData.afficherLignesDataframe();
+		System.out.println("");
+		System.out.println("");
+		System.out.println("***************************Fin des créations de Dataframe***************************");
+		System.out.println("");
+		
+		//Statistques sur les dataframes
+		System.out.println("***************************Statistiques de Dataframe********************************");
+
+
+		
+		
 		
 	}
 }

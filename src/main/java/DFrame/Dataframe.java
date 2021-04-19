@@ -49,7 +49,7 @@ public class Dataframe<E> {
 	}
 	
 	/*
-	 * Retourne une colonne
+	 * Retourne une colonne grace a son label
 	 * @param label : nom d'une colonne
 	 * */
 	public Colonne<E> getColonne(String label) {
@@ -67,6 +67,14 @@ public class Dataframe<E> {
 	}
 	
 	/*
+	 * Retourne une colonne grace a son index
+	 * @param index : numero de la colonne
+	 * */
+	public Colonne<E> getColonne(int index){
+		return dataframe.get(index);
+	}
+	
+	/*
 	 * Retourne le nombres de lignes du dataframe
 	 * */
 	public int nbLignes() {
@@ -79,8 +87,10 @@ public class Dataframe<E> {
 		return nb;
 	}
 	
+	/**Testé sans Junit**/
+	
 	/*
-	 * Affiche le datafrmae par colonne
+	 * Affiche le dataframe par colonne
 	 * */
 	public void afficherColonnesDataframe() {
 		for (int i=0; i<dataframe.size(); i++) {
@@ -128,6 +138,46 @@ public class Dataframe<E> {
 			}
 		}
 	}
+	
+	/**A tester avec Junit et sans**/
+	
+	/*
+	 * Creation d'un Dataframe a partir des colonnes d'un autre
+	 * */
+	public Dataframe createNewDataframeFromColonnes(ArrayList<String> labels) {
+		Dataframe data = new Dataframe();
+		for(int i=0; i<labels.size(); i++) {
+			data.addColonne(this.getColonne(labels.get(i)));
+		}
+		return data;
+	}
+	
+	/*
+	 * Creation d'un Dataframe a partir des lignes d'un autre
+	 * */
+	public Dataframe createNewDataframeFromLines( ArrayList<Integer> index) {
+		
+		Dataframe data = new Dataframe();
+		int nb = this.nbColonnes();
+		
+		//Creation du nombre de colonne
+		for(int i=0; i<nb; i++) {
+			Colonne c = new Colonne();
+			data.addColonne(c);
+		}
+		
+		//Remplissage du nouveau dataframe 
+		for(int i=0; i<index.size(); i++) {
+			for(int j=0; j<nb; j++) {
+				Colonne c = data.getColonne(j);
+				c.addElem(this.getColonne(j).getElem(index.get(i)));
+			}
+		}
+		return data;
+		
+	}
+	
+	
 	
 	
 	

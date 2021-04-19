@@ -26,17 +26,27 @@ public class Colonne<E> {
 	}
 	
 	/*
-	 * Retourne une colonne
+	 * Retourne une colonne 
 	 * */
 	public ArrayList<E> getColonne(){
 		return colonne;
 	}
+	
+	
 	
 	/*
 	 * Retourne le label de la colonne
 	 * */
 	public String getLabel() {
 		return label;
+	}
+	
+	/*
+	 * Met le label a une String
+	 * @param : label -> nom du label
+	 * */
+	public void setLabel(String label) {
+		this.label = label;
 	}
 	
 	/*
