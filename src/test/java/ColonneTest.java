@@ -42,6 +42,13 @@ class ColonneTest {
 		assertEquals(c.getElem(0), "carotte", "L'element de la liste est carotte");
 		assertEquals(c.colonneSize(), 1, "La colonne contient 1 element");
 	}
+
+	@Test
+	void addElemTest2(){
+		Colonne c = new Colonne();
+		c.addElem(3, 7);
+		assertEquals(c.getElem(3), 7, "l'élément doit être à la position 3");
+	}
 	
 	//Rajouter tests d'affichage
 }
