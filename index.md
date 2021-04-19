@@ -23,9 +23,11 @@ https://github.com/Morgane-hen/devopsProjet/actions/workflows/maven.yml
 
 ### 🟨 4 - Travail Collaboratif
 
-Mise en place de branches - main  
-- Ajout de code pour la bibliothèque  
-- Features
+Mise en place de branches 
+- main  
+- Ajout de code
+- Github page
+- autres Features
 
 ### 🟩 5 - Livraison continue (Maven)
 
@@ -46,6 +48,7 @@ https://github.com/Morgane-hen/devopsProjet/actions/workflows/release-package.ym
 Site généré par le Readme via un workflow : http://morgane-hen.github.io/devopsProjet
 
 ### 🟧 10 - Utilisation d’autres services Github
+  Scrutinizer (2e rangée de badges) -> Qualité de code et Coverage stats depuis Jacoco
 
 ## Fonctionnalitées
 
