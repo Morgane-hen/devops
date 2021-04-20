@@ -87,8 +87,9 @@ public class main {
 		//Statistques sur les dataframes
 		System.out.println("***************************Statistiques de Dataframe********************************");
 
-		String chem = "src\\fichiers_Csv\\donnees_test.csv";//chemin vers le csv
+		String chem = "src\\fichiers_Csv\\donnees_test_vide.csv";//chemin vers le csv
 		Csv test = new Csv(chem);
 		test.getData().afficherColonnesDataframe();
+		System.out.println(test.getData().getDataframe().size());
 	}
 }
