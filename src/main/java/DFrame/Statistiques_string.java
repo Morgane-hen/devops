@@ -19,6 +19,9 @@ public class Statistiques_string implements Statistiques{
         remplitHashMap();
     }
 
+    /**
+     * Remplit un HashMap faisant la correspondance entre un élément et le nombre de fois qu'il apparaît
+     */
     public void remplitHashMap()
     {
         for(String elem: this.elems.getColonne())
@@ -36,6 +39,10 @@ public class Statistiques_string implements Statistiques{
         }
     }
 
+    /**
+     *
+     * @return : une arrayList contenant le(s) tuple(s) qui est(sont) répété(s) le plus de fois
+     */
     public ArrayList<Pair> plusGrossesRepetes()
     {
         Pair max = new Pair("", 0);
@@ -60,6 +67,23 @@ public class Statistiques_string implements Statistiques{
         return resultat;
     }
 
+    /**
+     *
+     * @return : la même colonne qu'en entrée mais sans les doublons s'il y en a
+     */
+    public Colonne<String> col_sansDoublon()
+    {
+        Colonne<String> resultat = new Colonne<>();
+        for (Map.Entry tuple: this.elem_repete.entrySet())
+        {
+            resultat.addElem(tuple.getKey().toString());
+        }
+        return resultat;
+    }
+
+    /**
+     * calcul le pourcentage de présence de chaque élément
+     */
     @Override
     public void calculStats() {
         HashMap<String, Integer> pourcentage = new HashMap<String, Integer>();
@@ -74,6 +98,9 @@ public class Statistiques_string implements Statistiques{
         this.pourcentage_elem = pourcentage;
     }
 
+    /**
+     * affichage des stats une fois celle-ci calculées (pourcentages et l'élément le plus répété)
+     */
     @Override
     public void afficheStats()
     {
@@ -90,6 +117,5 @@ public class Statistiques_string implements Statistiques{
         {
             System.out.println(res.getClef() +" => "+res.getRepet());
         }
-
     }
 }
