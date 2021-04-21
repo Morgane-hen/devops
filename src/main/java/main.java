@@ -1,5 +1,6 @@
 import DFrame.Colonne;
 import DFrame.Dataframe;
+import DFrame.Statistiques_number;
 
 import java.util.ArrayList;
 
@@ -60,6 +61,8 @@ public class main {
 		data.afficherDernieresLignes();
 		System.out.println("");
 		System.out.println("***************************Fin de l'affichage****************************************");
-		
+
+
+		Statistiques_number stats_n = new Statistiques_number(c);
 	}
 }
