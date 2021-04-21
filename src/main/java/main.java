@@ -1,6 +1,7 @@
 import DFrame.Colonne;
 import DFrame.Dataframe;
 import DFrame.Statistiques_number;
+import DFrame.Statistiques_string;
 
 import java.util.ArrayList;
 
@@ -25,7 +26,7 @@ public class main {
 		colonne2.add("Peche");
 		colonne2.add("Cerise");
 		colonne2.add("Pasteque");
-		colonne2.add("Pamplemouse");
+		colonne2.add("Cerise");
 		colonne2.add("Abricot");
 		Colonne<String> c2 = new Colonne<String>(colonne2, "col2");
 		
@@ -61,9 +62,15 @@ public class main {
 		data.afficherDernieresLignes();
 		System.out.println("");
 		System.out.println("***************************Fin de l'affichage****************************************");
-
+		System.out.println();
+		System.out.println("***************************Stats Nombres****************************************");
 		Statistiques_number stats_n = new Statistiques_number(c);
-		stats_n.calculStats();
 		stats_n.afficheStats();
+		System.out.println("***************************Fin de l'affichage****************************************");
+		System.out.println();
+		System.out.println("***************************Stats String****************************************");
+		Statistiques_string stats_s = new Statistiques_string(c2);
+		stats_s.afficheStats();
+		System.out.println("***************************Fin de l'affichage****************************************");
 	}
 }

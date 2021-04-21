@@ -6,7 +6,7 @@ public class Colonne<E> {
 
 	private final ArrayList<E> colonne;
 	private String label = "";
-	private String type = ""; //A reflechir
+	//private String type = ""; //A reflechir
 	
 	/*
 	 * cr�ation d'une colonne vide avec type

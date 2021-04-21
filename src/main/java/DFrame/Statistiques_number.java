@@ -133,7 +133,6 @@ public class Statistiques_number implements Statistiques{
     @Override
     public void calculStats()
     {
-
         switch(type)
         {
             case INTEGER:
@@ -167,6 +166,7 @@ public class Statistiques_number implements Statistiques{
     @Override
     public void afficheStats()
     {
+        calculStats();
         System.out.println();
         System.out.println("colonne "+this.elems.getLabel());
         System.out.println("    Moyenne => "+this.moyenne +"\n"+ "    Ecart Type => "+this.ecart_type);
