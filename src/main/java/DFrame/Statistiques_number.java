@@ -54,7 +54,7 @@ public class Statistiques_number implements Statistiques{
         for (int elem: elements.getColonne()) {
             somme += elem;
         }
-        this.moyenne = somme / this.elems.colonneSize();
+        this.moyenne = (double) somme / this.elems.getColonne().size();
     }
 
     /**
@@ -96,7 +96,7 @@ public class Statistiques_number implements Statistiques{
         for (int elem: elements.getColonne()) {
             ecart += Math.abs(this.moyenne - (double) elem);
         }
-        this.ecart_type = ecart /this.elems.colonneSize();
+        this.ecart_type = (double) ecart /this.elems.colonneSize();
     }
 
     /**
@@ -138,6 +138,7 @@ public class Statistiques_number implements Statistiques{
         {
             case INTEGER:
                 int temoin1 = 0;
+                System.out.println(this.elems.getColonne().size());
                 setMoyenne(transformeInt(), temoin1);
                 setEcartType(transformeInt(), temoin1);
                 break;
@@ -166,6 +167,9 @@ public class Statistiques_number implements Statistiques{
     @Override
     public void afficheStats()
     {
+        System.out.println();
+        System.out.println("colonne "+this.elems.getLabel());
+        System.out.println("    Moyenne => "+this.moyenne +"\n"+ "    Ecart Type => "+this.ecart_type);
 
     }
 

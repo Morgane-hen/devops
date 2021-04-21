@@ -62,7 +62,8 @@ public class main {
 		System.out.println("");
 		System.out.println("***************************Fin de l'affichage****************************************");
 
-
 		Statistiques_number stats_n = new Statistiques_number(c);
+		stats_n.calculStats();
+		stats_n.afficheStats();
 	}
 }
