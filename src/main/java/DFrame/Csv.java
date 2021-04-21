@@ -147,7 +147,7 @@ public class Csv {
                                 data.getColonne(String.valueOf(indice)).addElem(elem);
                                 break;
 
-                            case default:
+                            default:
                                 Object elem_bis7 = elem;
                                 data.getColonne(String.valueOf(indice)).addElem(elem_bis7);
                                 break;
