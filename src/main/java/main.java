@@ -7,44 +7,59 @@ import java.util.ArrayList;
 public class main {
 	public static void main(String[] args) {
 		//colonnes
-		ArrayList<Integer> colonne1 = new ArrayList<Integer>();
-		colonne1.add(1);
-		colonne1.add(2);
-		colonne1.add(3);
-		colonne1.add(4);
-		colonne1.add(5);
-		colonne1.add(6);
-		colonne1.add(7);
-		colonne1.add(8);
-		Colonne<Integer> c = new Colonne<Integer>(colonne1, "col1");
-		
-		ArrayList<String> colonne2 = new ArrayList<String>();
-		colonne2.add("Pomme");
-		colonne2.add("Poire");
-		colonne2.add("Framboise");
-		colonne2.add("Peche");
-		colonne2.add("Cerise");
-		colonne2.add("Pasteque");
-		colonne2.add("Pamplemouse");
-		colonne2.add("Abricot");
-		Colonne<String> c2 = new Colonne<String>(colonne2, "col2");
+		Dataframe data;
+		if(args.length != 0)
+		{
+			//chemin du fichier donné en paramètre, création du dataframe depuis ce fichier
 
-		ArrayList<String> colonne3 = new ArrayList<String>();
-		colonne3.add("Haricot");
-		colonne3.add("Chou");
-		colonne3.add("Fenouil");
-		colonne3.add("Poireau");
-		colonne3.add("Courgette");
-		colonne3.add("Champignon");
-		colonne3.add("Poivron");
-		colonne3.add("Salade");
-		Colonne<String> c3 = new Colonne<String>(colonne3, "col3");
-		
-		//Dataframe
-		Dataframe data = new Dataframe();
-		data.addColonne(c);
-		data.addColonne(c2);
-		data.addColonne(c3);
+			//le chemin doit être le premier argument
+			Csv csv = new Csv(args[0]);
+			data = csv.getData();
+		}
+		else
+		{
+			//pas de fichier donné, création du dataframe à la main
+
+			ArrayList<Integer> colonne1 = new ArrayList<Integer>();
+			colonne1.add(1);
+			colonne1.add(2);
+			colonne1.add(3);
+			colonne1.add(4);
+			colonne1.add(5);
+			colonne1.add(6);
+			colonne1.add(7);
+			colonne1.add(8);
+			Colonne<Integer> c = new Colonne<Integer>(colonne1, "col1");
+
+			ArrayList<String> colonne2 = new ArrayList<String>();
+			colonne2.add("Pomme");
+			colonne2.add("Poire");
+			colonne2.add("Framboise");
+			colonne2.add("Peche");
+			colonne2.add("Cerise");
+			colonne2.add("Pasteque");
+			colonne2.add("Pamplemouse");
+			colonne2.add("Abricot");
+			Colonne<String> c2 = new Colonne<String>(colonne2, "col2");
+
+			ArrayList<String> colonne3 = new ArrayList<String>();
+			colonne3.add("Haricot");
+			colonne3.add("Chou");
+			colonne3.add("Fenouil");
+			colonne3.add("Poireau");
+			colonne3.add("Courgette");
+			colonne3.add("Champignon");
+			colonne3.add("Poivron");
+			colonne3.add("Salade");
+			Colonne<String> c3 = new Colonne<String>(colonne3, "col3");
+
+			//Dataframe
+			data = new Dataframe();
+			data.addColonne(c2);
+			data.addColonne(c3);
+			data.addColonne(c);
+		}
+
 		
 		//affichage
 		System.out.println("****************************Affichage du dataframe complet par lignes*****************");
@@ -87,9 +102,7 @@ public class main {
 		//Statistques sur les dataframes
 		System.out.println("***************************Statistiques de Dataframe********************************");
 
-		String chem = "src\\fichiers_Csv\\donnees_test_vide.csv";//chemin vers le csv
-		Csv test = new Csv(chem);
-		test.getData().afficherColonnesDataframe();
-		System.out.println(test.getData().getDataframe().size());
+		data.getColonne(2);
+
 	}
 }
