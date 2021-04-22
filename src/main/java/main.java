@@ -1,7 +1,7 @@
 import DFrame.Colonne;
 import DFrame.Dataframe;
-import DFrame.Statistiques_number;
-import DFrame.Statistiques_string;
+import DFrame.StatistiquesNumber;
+import DFrame.StatistiquesString;
 
 import java.util.ArrayList;
 
@@ -64,12 +64,12 @@ public class main {
 		System.out.println("***************************Fin de l'affichage****************************************");
 		System.out.println();
 		System.out.println("***************************Stats Nombres****************************************");
-		Statistiques_number stats_n = new Statistiques_number(c);
+		StatistiquesNumber stats_n = new StatistiquesNumber(c);
 		stats_n.afficheStats();
 		System.out.println("***************************Fin de l'affichage****************************************");
 		System.out.println();
 		System.out.println("***************************Stats String****************************************");
-		Statistiques_string stats_s = new Statistiques_string(c2);
+		StatistiquesString stats_s = new StatistiquesString(c2);
 		stats_s.afficheStats();
 		System.out.println("***************************Fin de l'affichage****************************************");
 	}

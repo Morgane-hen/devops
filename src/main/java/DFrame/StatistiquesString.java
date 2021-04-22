@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Statistiques_string implements Statistiques{
+public class StatistiquesString implements Statistiques{
 
 
     private Colonne<String> elems;
     private HashMap<String, Integer> elem_repete;
     private HashMap<String, Integer> pourcentage_elem;
 
-    public Statistiques_string(Colonne<String> colonne)
+    public StatistiquesString(Colonne<String> colonne)
     {
         this.elems = colonne;
         this.elem_repete = new HashMap<>();
@@ -37,6 +37,15 @@ public class Statistiques_string implements Statistiques{
                 this.elem_repete.put(elem, 1);
             }
         }
+    }
+
+
+    public HashMap<String, Integer> getPourcentage_elem() {
+        return pourcentage_elem;
+    }
+
+    public Colonne<String> getElems() {
+        return elems;
     }
 
     /**

@@ -2,7 +2,7 @@ package DFrame;
 
 import java.util.Locale;
 
-public class Statistiques_number implements Statistiques{
+public class StatistiquesNumber implements Statistiques{
 
     private Colonne<? extends Number> elems;
     private double moyenne;
@@ -14,7 +14,7 @@ public class Statistiques_number implements Statistiques{
      *
      * @param colonne : colonne possèdant les nombres que l'on veut étudier
      */
-    public Statistiques_number(Colonne<? extends Number> colonne)
+    public StatistiquesNumber(Colonne<? extends Number> colonne)
     {
 
         String classe = type_elem(colonne);
@@ -41,6 +41,14 @@ public class Statistiques_number implements Statistiques{
         }
         String[] type = classe.split("\\.");
         return type[type.length-1];
+    }
+
+    public double getMoyenne() {
+        return moyenne;
+    }
+
+    public double getEcart_type() {
+        return ecart_type;
     }
 
     /**
@@ -92,7 +100,7 @@ public class Statistiques_number implements Statistiques{
      */
     public void setEcartType(Colonne<Integer> elements, int integer)
     {
-        int ecart = 0;
+        double ecart = 0;
         for (int elem: elements.getColonne()) {
             ecart += Math.abs(this.moyenne - (double) elem);
         }
@@ -108,7 +116,8 @@ public class Statistiques_number implements Statistiques{
     {
         float ecart = 0;
         for (float elem: elements.getColonne()) {
-            ecart += Math.abs(this.moyenne - (double) elem);
+            ecart += Math.abs(this.moyenne - elem);
+            System.out.println("ecart : "+ecart);
         }
         this.ecart_type = ecart /this.elems.colonneSize();
     }
