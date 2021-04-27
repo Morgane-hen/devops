@@ -136,5 +136,185 @@ class DataframeTest {
 		assertEquals(nouveau.getColonne(1).getElem(0), "Demain", "Le Deuxieme est Demain");
 	}
 	
-	
+	/*******************************Test de sélection***************************/
+
+	@Test
+	void selectionEqualDouble()
+	{
+		ArrayList<Double> colonne1 = new ArrayList<Double>();
+		colonne1.add(1.0);
+		colonne1.add(2.7);
+		colonne1.add(3.9);
+		colonne1.add(4.3);
+		colonne1.add(5.1);
+		colonne1.add(6.0);
+		colonne1.add(7.0);
+		colonne1.add(8.0);
+		Colonne<Double> c = new Colonne<Double>(colonne1, "col1");
+
+		ArrayList<String> colonne2 = new ArrayList<String>();
+		colonne2.add("Pomme");
+		colonne2.add("Poire");
+		colonne2.add("Framboise");
+		colonne2.add("Peche");
+		colonne2.add("Cerise");
+		colonne2.add("Pasteque");
+		colonne2.add("Pamplemouse");
+		colonne2.add("Abricot");
+		Colonne<String> c2 = new Colonne<String>(colonne2, "col2");
+
+		//Dataframe
+		Dataframe data = new Dataframe();
+		data.addColonne(c);
+		data.addColonne(c2);
+
+		Dataframe res = data.selectionEqual("col1", 3.9);
+		assertEquals(res.getColonne(0).getElem(0), 3.9);
+		assertEquals(res.getColonne(1).getElem(0), "Framboise");
+	}
+
+	@Test
+	void selectionEqualInteger()
+	{
+		ArrayList<Integer> colonne1 = new ArrayList<Integer>();
+		colonne1.add(27);
+		colonne1.add(2);
+		colonne1.add(3);
+		colonne1.add(4);
+		colonne1.add(5);
+		colonne1.add(6);
+		colonne1.add(7);
+		colonne1.add(8);
+		Colonne<Integer> c = new Colonne<Integer>(colonne1, "col1");
+
+		ArrayList<String> colonne2 = new ArrayList<String>();
+		colonne2.add("Pomme");
+		colonne2.add("Poire");
+		colonne2.add("Framboise");
+		colonne2.add("Peche");
+		colonne2.add("Cerise");
+		colonne2.add("Pasteque");
+		colonne2.add("Pamplemouse");
+		colonne2.add("Abricot");
+		Colonne<String> c2 = new Colonne<String>(colonne2, "col2");
+
+		//Dataframe
+		Dataframe data = new Dataframe();
+		data.addColonne(c);
+		data.addColonne(c2);
+
+		Dataframe res = data.selectionEqual("col1", 27);
+		assertEquals(res.getColonne(0).getElem(0), 27);
+		assertEquals(res.getColonne(1).getElem(0), "Pomme");
+	}
+
+	void selectionEqualString()
+	{
+		ArrayList<Integer> colonne1 = new ArrayList<Integer>();
+		colonne1.add(27);
+		colonne1.add(2);
+		colonne1.add(3);
+		colonne1.add(4);
+		colonne1.add(5);
+		colonne1.add(6);
+		colonne1.add(7);
+		colonne1.add(8);
+		Colonne<Integer> c = new Colonne<Integer>(colonne1, "col1");
+
+		ArrayList<String> colonne2 = new ArrayList<String>();
+		colonne2.add("Pomme");
+		colonne2.add("Poire");
+		colonne2.add("Framboise");
+		colonne2.add("Peche");
+		colonne2.add("Cerise");
+		colonne2.add("Pasteque");
+		colonne2.add("Pamplemouse");
+		colonne2.add("Abricot");
+		Colonne<String> c2 = new Colonne<String>(colonne2, "col2");
+
+		//Dataframe
+		Dataframe data = new Dataframe();
+		data.addColonne(c);
+		data.addColonne(c2);
+
+		Dataframe res = data.selectionEqual("col2", "Abricot");
+		assertEquals(res.getColonne(1).getElem(0), "Abricot");
+		assertEquals(res.getColonne(0).getElem(0), 8);
+	}
+
+	@Test
+	void selectioninfDouble()
+	{
+		ArrayList<Double> colonne1 = new ArrayList<Double>();
+		colonne1.add(1.0);
+		colonne1.add(2.7);
+		colonne1.add(3.9);
+		colonne1.add(4.3);
+		colonne1.add(5.1);
+		colonne1.add(6.0);
+		colonne1.add(7.0);
+		colonne1.add(8.0);
+		Colonne<Double> c = new Colonne<Double>(colonne1, "col1");
+
+		ArrayList<String> colonne2 = new ArrayList<String>();
+		colonne2.add("Pomme");
+		colonne2.add("Poire");
+		colonne2.add("Framboise");
+		colonne2.add("Peche");
+		colonne2.add("Cerise");
+		colonne2.add("Pasteque");
+		colonne2.add("Pamplemouse");
+		colonne2.add("Abricot");
+		Colonne<String> c2 = new Colonne<String>(colonne2, "col2");
+
+		//Dataframe
+		Dataframe data = new Dataframe();
+		data.addColonne(c);
+		data.addColonne(c2);
+
+		Dataframe res = data.selectionInf("col1", 3.9, false);
+		res.afficherLignesDataframe();
+		assertEquals(res.getColonne(0).getElem(0), 1.0);
+		assertEquals(res.getColonne(1).getElem(0), "Pomme");
+		assertEquals(res.getColonne(0).getElem(1), 2.7);
+		assertEquals(res.getColonne(1).getElem(1), "Poire");
+
+	}
+
+	@Test
+	void selectionSupInteger()
+	{
+		ArrayList<Integer> colonne1 = new ArrayList<Integer>();
+		colonne1.add(27);
+		colonne1.add(2);
+		colonne1.add(3);
+		colonne1.add(4);
+		colonne1.add(5);
+		colonne1.add(6);
+		colonne1.add(7);
+		colonne1.add(8);
+		Colonne<Integer> c = new Colonne<Integer>(colonne1, "col1");
+
+		ArrayList<String> colonne2 = new ArrayList<String>();
+		colonne2.add("Pomme");
+		colonne2.add("Poire");
+		colonne2.add("Framboise");
+		colonne2.add("Peche");
+		colonne2.add("Cerise");
+		colonne2.add("Pasteque");
+		colonne2.add("Pamplemouse");
+		colonne2.add("Abricot");
+		Colonne<String> c2 = new Colonne<String>(colonne2, "col2");
+
+		//Dataframe
+		Dataframe data = new Dataframe();
+		data.addColonne(c);
+		data.addColonne(c2);
+
+		Dataframe res = data.selectionSup("col1", 8, true);
+		assertEquals(res.getColonne(0).getElem(0), 27);
+		assertEquals(res.getColonne(1).getElem(0), "Pomme");
+		assertEquals(res.getColonne(0).getElem(1), 8);
+		assertEquals(res.getColonne(1).getElem(1), "Abricot");
+	}
 }

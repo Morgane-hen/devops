@@ -253,11 +253,9 @@ public class Dataframe<E> {
 		{
 			if(index_ligne < c.colonneSize())
 			{
-				System.out.println("premier if");
 				//on vérifie que la colonne existe bien dans le deuxième dataframe
 				if(receveur.getColonne(c.getLabel()) != null)
 				{
-					System.out.println("deuxième if");
 					//ajoute l'élément numéro index_ligne de la colonne c au dataframe receveur
 					receveur.getColonne(c.getLabel()).addElem(c.getElem(index_ligne));
 				}
@@ -363,11 +361,12 @@ public class Dataframe<E> {
 			{
 				double new_elem = elem.doubleValue();
 				double new_borne_sup = borne_sup.doubleValue();
-				if(new_elem > new_borne_sup || ((new_elem == new_borne_sup) && equal))
+				if(new_elem < new_borne_sup || ((new_elem == new_borne_sup) && equal))
 				{
 					//on ajoute la ligne complète au nouveau dataframe
 					this.ajouteLigne(data, cpt);
 				}
+				cpt++;
 			}
 			return data;
 		}
