@@ -168,7 +168,7 @@ class DataframeTest {
 		data.addColonne(c);
 		data.addColonne(c2);
 
-		Dataframe res = data.selectionEqual("col1", 3.9);
+		Dataframe res = data.selection("col1", 3.9, true, false, false);
 		assertEquals(res.getColonne(0).getElem(0), 3.9);
 		assertEquals(res.getColonne(1).getElem(0), "Framboise");
 	}
@@ -203,7 +203,7 @@ class DataframeTest {
 		data.addColonne(c);
 		data.addColonne(c2);
 
-		Dataframe res = data.selectionEqual("col1", 27);
+		Dataframe res = data.selection("col1", 27, true, false, false);
 		assertEquals(res.getColonne(0).getElem(0), 27);
 		assertEquals(res.getColonne(1).getElem(0), "Pomme");
 	}
@@ -272,7 +272,7 @@ class DataframeTest {
 		data.addColonne(c);
 		data.addColonne(c2);
 
-		Dataframe res = data.selectionInf("col1", 3.9, false);
+		Dataframe res = data.selection("col1", 3.9, false, true, false);
 		res.afficherLignesDataframe();
 		assertEquals(res.getColonne(0).getElem(0), 1.0);
 		assertEquals(res.getColonne(1).getElem(0), "Pomme");
@@ -311,7 +311,7 @@ class DataframeTest {
 		data.addColonne(c);
 		data.addColonne(c2);
 
-		Dataframe res = data.selectionSup("col1", 8, true);
+		Dataframe res = data.selection("col1", 8, true, false, true);
 		assertEquals(res.getColonne(0).getElem(0), 27);
 		assertEquals(res.getColonne(1).getElem(0), "Pomme");
 		assertEquals(res.getColonne(0).getElem(1), 8);

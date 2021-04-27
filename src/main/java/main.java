@@ -88,7 +88,7 @@ public class main {
 		//Statistques sur les dataframes
 		//System.out.println("***************************Statistiques de Dataframe********************************");
 
-		Dataframe selection = data.selectionEqual("col1", 7);
+		Dataframe selection = data.selection("col1", 7, true, false, false);
 		selection.afficherColonnesDataframe();
 		selection.afficherDernieresLignes();
 

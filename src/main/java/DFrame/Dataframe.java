@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Dataframe<E> {
 
-	private final ArrayList<Colonne<E>> dataframe;
+	private final ArrayList<Colonne<E>> dataf;
 	private int cpt_colonne = 0;
 	
 	/**
@@ -12,7 +12,7 @@ public class Dataframe<E> {
 	 */
 	public Dataframe()
 	{
-		dataframe = new ArrayList<Colonne<E>>();
+		dataf = new ArrayList<Colonne<E>>();
 	}
 
 	/**
@@ -21,8 +21,8 @@ public class Dataframe<E> {
 	 */
 	public Dataframe(ArrayList<Colonne<E>> _dataframe)
 	{
-		this.dataframe = _dataframe;
-		cpt_colonne = dataframe.size();
+		this.dataf = _dataframe;
+		cpt_colonne = dataf.size();
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class Dataframe<E> {
 	 * @return : accesseur sur l'ensemble des colonnes
 	 */
 	public  ArrayList<Colonne<E>> getDataframe(){
-		return dataframe;
+		return dataf;
 	}
 	
 	/*
@@ -47,7 +47,7 @@ public class Dataframe<E> {
 	public void addColonne(Colonne<E> colonne)
 	{
 		//ajout d'une colonne
-		this.dataframe.add(colonne);
+		this.dataf.add(colonne);
 		cpt_colonne++;
 	}
 
@@ -58,7 +58,7 @@ public class Dataframe<E> {
 	 */
 	public Colonne<E> getColonne(String label) {
 		Colonne<E> c = new Colonne<>();
-		for (Colonne<E> eColonne : dataframe) {
+		for (Colonne<E> eColonne : dataf) {
 			if (eColonne.getLabel().equals(label)) {
 				c = eColonne;
 			}
@@ -76,7 +76,7 @@ public class Dataframe<E> {
 	 * @return : la colonne ayant l'indice index dans l'arrayList dataframe
 	 */
 	public Colonne<E> getColonne(int index){
-		return dataframe.get(index);
+		return dataf.get(index);
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class Dataframe<E> {
 	 */
 	public int nbLignes() {
 		int nb=0;
-		for (Colonne<E> eColonne : dataframe) {
+		for (Colonne<E> eColonne : dataf) {
 			if (eColonne.colonneSize() > nb) {
 				nb = eColonne.colonneSize();
 			}
@@ -99,7 +99,7 @@ public class Dataframe<E> {
 	 * Affiche le dataframe par colonne
 	 */
 	public void afficherColonnesDataframe() {
-		for (Colonne<E> eColonne : dataframe) {
+		for (Colonne<E> eColonne : dataf) {
 			eColonne.afficheColone();
 		}
 	}
@@ -112,7 +112,7 @@ public class Dataframe<E> {
 		for (int j= 0 ; j<nblignes; j++) {
 			System.out.println();
 			System.out.println("Ligne "+(j+1)+":");
-			for (Colonne<E> eColonne : dataframe) {
+			for (Colonne<E> eColonne : dataf) {
 				eColonne.afficherElem(j);
 			}
 		}
@@ -129,10 +129,10 @@ public class Dataframe<E> {
 		{
 			System.out.println("");
 			System.out.println("Ligne "+(j+1)+":");
-			for (int i=0; i<dataframe.size(); i++) {
-				if(dataframe.get(i).getElem(j) != null)
+			for (int i=0; i<dataf.size(); i++) {
+				if(dataf.get(i).getElem(j) != null)
 				{
-					dataframe.get(i).afficherElem(j);
+					dataf.get(i).afficherElem(j);
 				}
 				else
 				{
@@ -152,7 +152,7 @@ public class Dataframe<E> {
 
 		int j = 5;
 
-		for (Colonne c: this.dataframe)
+		for (Colonne c: this.dataf)
 		{
 			if(c.colonneSize() < j)
 			{
@@ -164,9 +164,9 @@ public class Dataframe<E> {
 		{
 			System.out.println("");
 			System.out.println("Ligne "+(this.nbLignes()-j+1)+" :");
-			for (int i=0; i<dataframe.size(); i++)
+			for (int i=0; i<dataf.size(); i++)
 			{
-				dataframe.get(i).afficherElem(this.nbLignes()-j);
+				dataf.get(i).afficherElem(this.nbLignes()-j);
 			}
 			j--;
 		}
@@ -227,7 +227,7 @@ public class Dataframe<E> {
 	{
 		Dataframe res = new Dataframe();
 
-		for (Colonne c: this.dataframe)
+		for (Colonne c: this.dataf)
 		{
 				Colonne c_bis = new Colonne(c.getLabel());
 				res.addColonne(c_bis);
@@ -249,8 +249,7 @@ public class Dataframe<E> {
 			System.out.println("erreur : "+index_ligne);
 		}
 
-		Dataframe res = new Dataframe();
-		for (Colonne c: this.dataframe)
+		for (Colonne c: this.dataf)
 		{
 			if(index_ligne < c.colonneSize())
 			{
@@ -264,16 +263,47 @@ public class Dataframe<E> {
 		}
 	}
 
+
+
 	/**
 	 *
 	 * @param label : nom de la colonne servant à sélectionner
 	 * @param equal : la valeur sélective
 	 * @return : le nouveau dataframe avec les lignes sélectionnées
 	 */
+	public Dataframe selection(String label, Number borne, boolean equal, boolean inf, boolean sup)
+	{
+		Dataframe  data = this.copieVide();
+		int cpt_colonne = 0;
+		if(this.getColonne(label) != null && this.getColonne(label).colonneSize() != 0)
+		{
+			//la colonne à sélectionné a été trouvée
+			//on sélectionne les éléments souhaités
+			int cpt = 0;
+			for (Number elem: (ArrayList<Number>)this.getColonne(label).getColonne())
+			{
+				double new_elem = elem.doubleValue();
+				double new_borne = borne.doubleValue();
+				if((new_elem == new_borne && equal) || (new_elem < new_borne && inf) || (new_elem > new_borne && sup))
+				{
+					//on ajoute la ligne complète au nouveau dataframe
+					this.ajouteLigne(data, cpt);
+				}
+				cpt++;
+			}
+
+			return data;
+		}
+		else
+		{
+			//pas de colonne avec ce label, on renvoie vide
+			return new Dataframe();
+		}
+	}
+
 	public Dataframe selectionEqual(String label, Number equal)
 	{
 		Dataframe  data = this.copieVide();
-		boolean colonne_trouvee = false;
 		int cpt_colonne = 0;
 		if(this.getColonne(label) != null && this.getColonne(label).colonneSize() != 0)
 		{
@@ -301,6 +331,7 @@ public class Dataframe<E> {
 		}
 	}
 
+
 	/**
 	 *
 	 * @param label : nom de la colonne servant à sélectionner
@@ -311,8 +342,6 @@ public class Dataframe<E> {
 	public Dataframe selectionSup(String label, Number borne_inf, boolean equal)
 	{
 		Dataframe  data = this.copieVide();
-		boolean colonne_trouvee = false;
-		int cpt_colonne = 0;
 		if(this.getColonne(label) != null && this.getColonne(label).colonneSize() != 0)
 		{
 			//la colonne a sélectionné a été trouvée
@@ -350,8 +379,6 @@ public class Dataframe<E> {
 	public Dataframe selectionInf(String label, Number borne_sup, boolean equal)
 	{
 		Dataframe  data = this.copieVide();
-		boolean colonne_trouvee = false;
-		int cpt_colonne = 0;
 		if(this.getColonne(label) != null && this.getColonne(label).colonneSize() != 0)
 		{
 			//la colonne a sélectionné a été trouvée
@@ -386,8 +413,6 @@ public class Dataframe<E> {
 	public Dataframe selectionEqual(String label, String equal)
 	{
 		Dataframe  data = this.copieVide();
-		boolean colonne_trouvee = false;
-		int cpt_colonne = 0;
 		if(this.getColonne(label) != null && this.getColonne(label).colonneSize() != 0)
 		{
 			//la colonne a sélectionné a été trouvée
