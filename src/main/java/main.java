@@ -6,16 +6,16 @@ import java.util.ArrayList;
 public class main {
 	public static void main(String[] args) {
 		//colonnes
-		ArrayList<Integer> colonne1 = new ArrayList<Integer>();
-		colonne1.add(1);
-		colonne1.add(2);
-		colonne1.add(3);
-		colonne1.add(4);
-		colonne1.add(5);
-		colonne1.add(6);
-		colonne1.add(7);
-		colonne1.add(8);
-		Colonne<Integer> c = new Colonne<Integer>(colonne1, "col1");
+		ArrayList<Double> colonne1 = new ArrayList<Double>();
+		colonne1.add(1.0);
+		colonne1.add(2.7);
+		colonne1.add(3.9);
+		colonne1.add(4.3);
+		colonne1.add(5.1);
+		colonne1.add(6.0);
+		colonne1.add(7.0);
+		colonne1.add(8.0);
+		Colonne<Double> c = new Colonne<Double>(colonne1, "col1");
 		
 		ArrayList<String> colonne2 = new ArrayList<String>();
 		colonne2.add("Pomme");
@@ -84,9 +84,11 @@ public class main {
 		System.out.println("");
 		
 		//Statistques sur les dataframes
-		System.out.println("***************************Statistiques de Dataframe********************************");
+		//System.out.println("***************************Statistiques de Dataframe********************************");
 
-
+		Dataframe selection = data.selectionEqual("col1", 7);
+		selection.afficherColonnesDataframe();
+		selection.afficherDernieresLignes();
 		
 		
 		
