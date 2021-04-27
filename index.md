@@ -21,20 +21,21 @@ Sur la branche main uniquement, avec Maven :
 - Tests JUnit  
 https://github.com/Morgane-hen/devopsProjet/actions/workflows/maven.yml
 
-### 🟨 4 - Travail Collaboratif
+### 🟩 4 - Travail Collaboratif
 
 Mise en place de branches 
-- main  
-- Ajout de code
+- main
 - Github page
-- autres Features
+- Code principal
+- Feature statistiques
+- Feature CSV
 
 ### 🟩 5 - Livraison continue (Maven)
 
 Mise en place d'un workflow publiant automatiquement un package lors d'une release  
 https://github.com/Morgane-hen/devopsProjet/actions/workflows/release-package.yml
 
-### 🟥 6 - Livraison continue (Docker)
+### 🟧 6 - Livraison continue (Docker)
 
 ### 🟥 7 - Infrastructure-as-code et Cloud
 
@@ -47,8 +48,9 @@ https://github.com/Morgane-hen/devopsProjet/actions/workflows/release-package.ym
 
 Site généré par le Readme via un workflow : http://morgane-hen.github.io/devopsProjet
 
-### 🟧 10 - Utilisation d’autres services Github
-  Scrutinizer (2e rangée de badges) -> Qualité de code et Coverage stats depuis Jacoco
+### 🟨 10 - Utilisation d’autres services Github
+  Scrutinizer (2nd rangée de badges)
+	 Qualité de code et Jacoco Coverage statistiques
 
 ## Fonctionnalitées
 
