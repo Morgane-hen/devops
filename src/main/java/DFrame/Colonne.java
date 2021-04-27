@@ -24,19 +24,35 @@ public class Colonne<E> {
 		this.colonne = elem;
 		this.label = _label;
 	}
+
+	public Colonne(String _label)
+	{
+		this.colonne = new ArrayList<E>();
+		this.label = _label;
+	}
 	
 	/*
-	 * Retourne une colonne
+	 * Retourne une colonne 
 	 * */
 	public ArrayList<E> getColonne(){
 		return colonne;
 	}
+	
+	
 	
 	/*
 	 * Retourne le label de la colonne
 	 * */
 	public String getLabel() {
 		return label;
+	}
+	
+	/*
+	 * Met le label a une String
+	 * @param : label -> nom du label
+	 * */
+	public void setLabel(String label) {
+		this.label = label;
 	}
 	
 	/*
@@ -52,6 +68,14 @@ public class Colonne<E> {
 	 * */
 	public void addElem(E elem) {
 		colonne.add(elem);
+	}
+	
+	/*
+	 * Ajoute un element à la colonne
+	 * @param : elem -> element à ajouter
+	 * */
+	public void addElem(int i,E elem) {
+		colonne.add(i, elem);
 	}
 	
 	/*

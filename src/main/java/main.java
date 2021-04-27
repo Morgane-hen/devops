@@ -8,16 +8,16 @@ import java.util.ArrayList;
 public class main {
 	public static void main(String[] args) {
 		//colonnes
-		ArrayList<Integer> colonne1 = new ArrayList<Integer>();
-		colonne1.add(1);
-		colonne1.add(2);
-		colonne1.add(3);
-		colonne1.add(4);
-		colonne1.add(5);
-		colonne1.add(6);
-		colonne1.add(7);
-		colonne1.add(8);
-		Colonne<Integer> c = new Colonne<Integer>(colonne1, "col1");
+		ArrayList<Double> colonne1 = new ArrayList<Double>();
+		colonne1.add(1.0);
+		colonne1.add(2.7);
+		colonne1.add(3.9);
+		colonne1.add(4.3);
+		colonne1.add(5.1);
+		colonne1.add(6.0);
+		colonne1.add(7.0);
+		colonne1.add(8.0);
+		Colonne<Double> c = new Colonne<Double>(colonne1, "col1");
 		
 		ArrayList<String> colonne2 = new ArrayList<String>();
 		colonne2.add("Pomme");
@@ -62,6 +62,36 @@ public class main {
 		data.afficherDernieresLignes();
 		System.out.println("");
 		System.out.println("***************************Fin de l'affichage****************************************");
+		System.out.println("");
+
+		//Creation d'un dataframe a partir d'un autre
+		System.out.println("***************************Creation d'un Dataframe à partir des colonnes 1 et 2******");
+		ArrayList<String> labels = new ArrayList<String>();
+		labels.add("col1");
+		labels.add("col2");
+		Dataframe newData = data.createNewDataframeFromColonnes(labels);
+		newData.afficherLignesDataframe();
+		System.out.println("");
+		System.out.println("");
+		System.out.println("***************************Creation d'un Dataframe à partir des lignes 3, 5, 7******");
+		ArrayList<Integer> indexs = new ArrayList<Integer>();
+		indexs.add(2); //car on commence le compte à 0
+		indexs.add(4);
+		indexs.add(6);
+		Dataframe anotherData = data.createNewDataframeFromLines(indexs);
+		anotherData.afficherLignesDataframe();
+		System.out.println("");
+		System.out.println("");
+		System.out.println("***************************Fin des créations de Dataframe***************************");
+		System.out.println("");
+		
+		//Statistques sur les dataframes
+		//System.out.println("***************************Statistiques de Dataframe********************************");
+
+		Dataframe selection = data.selectionEqual("col1", 7);
+		selection.afficherColonnesDataframe();
+		selection.afficherDernieresLignes();
+
 		System.out.println();
 		System.out.println("***************************Stats Nombres****************************************");
 		StatistiquesNumber stats_n = new StatistiquesNumber(c);
@@ -72,5 +102,6 @@ public class main {
 		StatistiquesString stats_s = new StatistiquesString(c2);
 		stats_s.afficheStats();
 		System.out.println("***************************Fin de l'affichage****************************************");
+    
 	}
 }
