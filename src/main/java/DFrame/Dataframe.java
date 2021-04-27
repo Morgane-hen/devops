@@ -263,8 +263,6 @@ public class Dataframe<E> {
 		}
 	}
 
-
-
 	/**
 	 *
 	 * @param label : nom de la colonne servant à sélectionner
@@ -292,110 +290,6 @@ public class Dataframe<E> {
 				cpt++;
 			}
 
-			return data;
-		}
-		else
-		{
-			//pas de colonne avec ce label, on renvoie vide
-			return new Dataframe();
-		}
-	}
-
-	public Dataframe selectionEqual(String label, Number equal)
-	{
-		Dataframe  data = this.copieVide();
-		int cpt_colonne = 0;
-		if(this.getColonne(label) != null && this.getColonne(label).colonneSize() != 0)
-		{
-			//la colonne à sélectionné a été trouvée
-			//on sélectionne les éléments souhaités
-			int cpt = 0;
-			for (Number elem: (ArrayList<Number>)this.getColonne(label).getColonne())
-			{
-				double new_elem = elem.doubleValue();
-				double new_equal = equal.doubleValue();
-				if(new_elem == new_equal)
-				{
-					//on ajoute la ligne complète au nouveau dataframe
-					this.ajouteLigne(data, cpt);
-				}
-				cpt++;
-			}
-
-			return data;
-		}
-		else
-		{
-			//pas de colonne avec ce label, on renvoie vide
-			return new Dataframe();
-		}
-	}
-
-
-	/**
-	 *
-	 * @param label : nom de la colonne servant à sélectionner
-	 * @param borne_inf : la valeur à dépasser
-	 * @param equal : si true, valeur supérieure ou égale
-	 * @return : le nouveau dataframe avec les lignes sélectionnées
-	 */
-	public Dataframe selectionSup(String label, Number borne_inf, boolean equal)
-	{
-		Dataframe  data = this.copieVide();
-		if(this.getColonne(label) != null && this.getColonne(label).colonneSize() != 0)
-		{
-			//la colonne a sélectionné a été trouvée
-
-			//on sélectionne les éléments souhaités
-			int cpt = 0;
-			for (Number elem: (ArrayList<Number>) this.getColonne(label).getColonne())
-			{
-				double new_elem = elem.doubleValue();
-				double new_borne_inf = borne_inf.doubleValue();
-				if(new_elem > new_borne_inf || ((new_elem == new_borne_inf) && equal))
-				{
-					//on ajoute la ligne complète au nouveau dataframe
-					this.ajouteLigne(data, cpt);
-				}
-				cpt++;
-			}
-
-			return data;
-		}
-		else
-		{
-			//pas de colonne avec ce label, on renvoie vide
-			return new Dataframe();
-		}
-	}
-
-	/**
-	 *
-	 * @param label : nom de la colonne servant à sélectionner
-	 * @param borne_sup : la valeur à ne pas dépasser
-	 * @param equal : si true, valeur inférieure ou égale
-	 * @return : le nouveau dataframe avec les lignes sélectionnées
-	 */
-	public Dataframe selectionInf(String label, Number borne_sup, boolean equal)
-	{
-		Dataframe  data = this.copieVide();
-		if(this.getColonne(label) != null && this.getColonne(label).colonneSize() != 0)
-		{
-			//la colonne a sélectionné a été trouvée
-
-			//on sélectionne les éléments souhaités
-			int cpt = 0;
-			for (Number elem: (ArrayList<Number>)this.getColonne(label).getColonne())
-			{
-				double new_elem = elem.doubleValue();
-				double new_borne_sup = borne_sup.doubleValue();
-				if(new_elem < new_borne_sup || ((new_elem == new_borne_sup) && equal))
-				{
-					//on ajoute la ligne complète au nouveau dataframe
-					this.ajouteLigne(data, cpt);
-				}
-				cpt++;
-			}
 			return data;
 		}
 		else
