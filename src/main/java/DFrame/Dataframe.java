@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Dataframe<E> {
 
-	private ArrayList<Colonne<E>> dataframe;
+	private final ArrayList<Colonne<E>> dataframe;
 	private int cpt_colonne = 0;
 	
 	/**
@@ -57,10 +57,10 @@ public class Dataframe<E> {
 	 * @return : la colonne avec le label indiqué
 	 */
 	public Colonne<E> getColonne(String label) {
-		Colonne<E> c = new Colonne<E>();
-		for (int i=0; i<dataframe.size(); i++) {
-			if(dataframe.get(i).getLabel().equals(label)) {
-				c = dataframe.get(i);
+		Colonne<E> c = new Colonne<>();
+		for (Colonne<E> eColonne : dataframe) {
+			if (eColonne.getLabel().equals(label)) {
+				c = eColonne;
 			}
 		}
 		if (c.getLabel().equals("")) {
@@ -85,9 +85,9 @@ public class Dataframe<E> {
 	 */
 	public int nbLignes() {
 		int nb=0;
-		for(int i=0; i<dataframe.size(); i++) {
-			if (dataframe.get(i).colonneSize()>nb) {
-				nb = dataframe.get(i).colonneSize();
+		for (Colonne<E> eColonne : dataframe) {
+			if (eColonne.colonneSize() > nb) {
+				nb = eColonne.colonneSize();
 			}
 		}
 		return nb;
@@ -99,8 +99,8 @@ public class Dataframe<E> {
 	 * Affiche le dataframe par colonne
 	 */
 	public void afficherColonnesDataframe() {
-		for (int i=0; i<dataframe.size(); i++) {
-			dataframe.get(i).afficheColone();
+		for (Colonne<E> eColonne : dataframe) {
+			eColonne.afficheColone();
 		}
 	}
 	
@@ -110,10 +110,10 @@ public class Dataframe<E> {
 	public void afficherLignesDataframe() {
 		int nblignes = this.nbLignes();
 		for (int j= 0 ; j<nblignes; j++) {
-			System.out.println("");
+			System.out.println();
 			System.out.println("Ligne "+(j+1)+":");
-			for (int i=0; i<dataframe.size(); i++) {
-				dataframe.get(i).afficherElem(j);
+			for (Colonne<E> eColonne : dataframe) {
+				eColonne.afficherElem(j);
 			}
 		}
 	}
@@ -122,6 +122,7 @@ public class Dataframe<E> {
 	 * Afficher les 5 premières lignes du dataframe
 	 */
 	public void afficherPremieresLignes() {
+
 		int j = 0;
 		boolean fini = false;
 		while(j < 5 && !fini)
@@ -137,6 +138,7 @@ public class Dataframe<E> {
 				{
 					fini = true;
 				}
+
 			}
 			j++;
 		}
@@ -147,7 +149,6 @@ public class Dataframe<E> {
 	 * Afficher les 5 dernières lignes du dataframe
 	 */
 	public void afficherDernieresLignes() {
-
 
 		int j = 5;
 
