@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Colonne&lt;E&gt; {
 
-	private ArrayList&lt;E&gt; colonne;
+	private final ArrayList&lt;E&gt; colonne;
 <span class="fc" id="L8">	private String label = &quot;&quot;;</span>
-<span class="fc" id="L9">	private String type = &quot;&quot;; //A reflechir</span>
+	//private String type = &quot;&quot;; //A reflechir
 	
 	/*
 	 * cr�ation d'une colonne vide avec type
@@ -66,15 +66,15 @@ public class Colonne&lt;E&gt; {
 	 * Affiche le contenu d'une coone et son label
 	 * */
 	public void afficheColone() {
-<span class="nc" id="L69">		String affichage = this.label + &quot; =&gt; &quot;;</span>
+<span class="nc" id="L69">		StringBuilder affichage = new StringBuilder(this.label + &quot; =&gt; &quot;);</span>
 <span class="nc bnc" id="L70" title="All 2 branches missed.">		for (int i=0; i&lt;colonne.size(); i++) {</span>
 <span class="nc bnc" id="L71" title="All 2 branches missed.">			if(i == 0)</span>
 			{
-<span class="nc" id="L73">				affichage += &quot;elem: &quot;+colonne.get(i)+ &quot;\n&quot;;</span>
+<span class="nc" id="L73">				affichage.append(&quot;elem: &quot;).append(colonne.get(i)).append(&quot;\n&quot;);</span>
 			}
 			else
 			{
-<span class="nc" id="L77">				affichage+=&quot;	elem: &quot;+colonne.get(i)+ &quot;\n&quot;;</span>
+<span class="nc" id="L77">				affichage.append(&quot;	elem: &quot;).append(colonne.get(i)).append(&quot;\n&quot;);</span>
 			}
 			
 		}

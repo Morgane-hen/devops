@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Dataframe&lt;E&gt; {
 
-	private ArrayList&lt;Colonne&lt;E&gt;&gt; dataframe;
+	private final ArrayList&lt;Colonne&lt;E&gt;&gt; dataframe;
 <span class="fc" id="L8">	private int cpt_colonne = 0;</span>
 	
 	/*
@@ -53,12 +53,12 @@ public class Dataframe&lt;E&gt; {
 	 * @param label : nom d'une colonne
 	 * */
 	public Colonne&lt;E&gt; getColonne(String label) {
-<span class="fc" id="L56">		Colonne&lt;E&gt; c = new Colonne&lt;E&gt;();</span>
-<span class="fc bfc" id="L57" title="All 2 branches covered.">		for (int i=0; i&lt;dataframe.size(); i++) {</span>
-<span class="fc bfc" id="L58" title="All 2 branches covered.">			if(dataframe.get(i).getLabel().equals(label)) {</span>
-<span class="fc" id="L59">				c = dataframe.get(i);</span>
+<span class="fc" id="L56">		Colonne&lt;E&gt; c = new Colonne&lt;&gt;();</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">		for (Colonne&lt;E&gt; eColonne : dataframe) {</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">			if (eColonne.getLabel().equals(label)) {</span>
+<span class="fc" id="L59">				c = eColonne;</span>
 			}
-		}
+<span class="fc" id="L61">		}</span>
 <span class="pc bpc" id="L62" title="1 of 2 branches missed.">		if (c.getLabel().equals(&quot;&quot;)) {</span>
 <span class="nc" id="L63">			return null;</span>
 		}else {
@@ -71,11 +71,11 @@ public class Dataframe&lt;E&gt; {
 	 * */
 	public int nbLignes() {
 <span class="fc" id="L73">		int nb=0;</span>
-<span class="fc bfc" id="L74" title="All 2 branches covered.">		for(int i=0; i&lt;dataframe.size(); i++) {</span>
-<span class="fc bfc" id="L75" title="All 2 branches covered.">			if (dataframe.get(i).colonneSize()&gt;nb) {</span>
-<span class="fc" id="L76">				nb = dataframe.get(i).colonneSize();</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">		for (Colonne&lt;E&gt; eColonne : dataframe) {</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">			if (eColonne.colonneSize() &gt; nb) {</span>
+<span class="fc" id="L76">				nb = eColonne.colonneSize();</span>
 			}
-		}
+<span class="fc" id="L78">		}</span>
 <span class="fc" id="L79">		return nb;</span>
 	}
 	
@@ -83,9 +83,9 @@ public class Dataframe&lt;E&gt; {
 	 * Affiche le datafrmae par colonne
 	 * */
 	public void afficherColonnesDataframe() {
-<span class="nc bnc" id="L86" title="All 2 branches missed.">		for (int i=0; i&lt;dataframe.size(); i++) {</span>
-<span class="nc" id="L87">			dataframe.get(i).afficheColone();</span>
-		}
+<span class="nc bnc" id="L86" title="All 2 branches missed.">		for (Colonne&lt;E&gt; eColonne : dataframe) {</span>
+<span class="nc" id="L87">			eColonne.afficheColone();</span>
+<span class="nc" id="L88">		}</span>
 <span class="nc" id="L89">	}</span>
 	
 	/*
@@ -94,11 +94,11 @@ public class Dataframe&lt;E&gt; {
 	public void afficherLignesDataframe() {
 <span class="nc" id="L95">		int nblignes = this.nbLignes();</span>
 <span class="nc bnc" id="L96" title="All 2 branches missed.">		for (int j= 0 ; j&lt;nblignes; j++) {</span>
-<span class="nc" id="L97">			System.out.println(&quot;&quot;);</span>
+<span class="nc" id="L97">			System.out.println();</span>
 <span class="nc" id="L98">			System.out.println(&quot;Ligne &quot;+(j+1)+&quot;:&quot;);</span>
-<span class="nc bnc" id="L99" title="All 2 branches missed.">			for (int i=0; i&lt;dataframe.size(); i++) {</span>
-<span class="nc" id="L100">				dataframe.get(i).afficherElem(j);</span>
-			}
+<span class="nc bnc" id="L99" title="All 2 branches missed.">			for (Colonne&lt;E&gt; eColonne : dataframe) {</span>
+<span class="nc" id="L100">				eColonne.afficherElem(j);</span>
+<span class="nc" id="L101">			}</span>
 		}
 <span class="nc" id="L103">	}</span>
 	
@@ -107,11 +107,11 @@ public class Dataframe&lt;E&gt; {
 	 * */
 	public void afficherPremieresLignes() {
 <span class="nc bnc" id="L109" title="All 2 branches missed.">		for (int j= 0 ; j&lt;5; j++) {</span>
-<span class="nc" id="L110">			System.out.println(&quot;&quot;);</span>
+<span class="nc" id="L110">			System.out.println();</span>
 <span class="nc" id="L111">			System.out.println(&quot;Ligne &quot;+(j+1)+&quot;:&quot;);</span>
-<span class="nc bnc" id="L112" title="All 2 branches missed.">			for (int i=0; i&lt;dataframe.size(); i++) {</span>
-<span class="nc" id="L113">				dataframe.get(i).afficherElem(j);</span>
-			}
+<span class="nc bnc" id="L112" title="All 2 branches missed.">			for (Colonne&lt;E&gt; eColonne : dataframe) {</span>
+<span class="nc" id="L113">				eColonne.afficherElem(j);</span>
+<span class="nc" id="L114">			}</span>
 		}
 		
 <span class="nc" id="L117">	}</span>
@@ -121,11 +121,11 @@ public class Dataframe&lt;E&gt; {
 	 * */
 	public void afficherDernieresLignes() {
 <span class="nc bnc" id="L123" title="All 2 branches missed.">		for (int j= this.nbLignes() ; j&gt;this.nbLignes()-5; j--) {</span>
-<span class="nc" id="L124">			System.out.println(&quot;&quot;);</span>
+<span class="nc" id="L124">			System.out.println();</span>
 <span class="nc" id="L125">			System.out.println(&quot;Ligne &quot;+j+&quot;:&quot;);</span>
-<span class="nc bnc" id="L126" title="All 2 branches missed.">			for (int i=0; i&lt;dataframe.size(); i++) {</span>
-<span class="nc" id="L127">				dataframe.get(i).afficherElem(j-1);</span>
-			}
+<span class="nc bnc" id="L126" title="All 2 branches missed.">			for (Colonne&lt;E&gt; eColonne : dataframe) {</span>
+<span class="nc" id="L127">				eColonne.afficherElem(j - 1);</span>
+<span class="nc" id="L128">			}</span>
 		}
 <span class="nc" id="L130">	}</span>
 	
