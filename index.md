@@ -71,6 +71,13 @@ Mise en place de branches
 	- Sélection d'une ligne par sa position
 	- Sélection de plusieurs lignes à partir d'une valeur donnée ( concerne les nombres et les chaînes de charactère)
 	  
+## Feedback
+	Scrutinizer : Très utile pour véririfer la couverture de code, les erreurs d'inattentions et les petits détails permettant d'améliorer la qualité, la compréhension du code. Le bémole de cet outil concerne le temps qui lui est dédié avant de pouvoir retourner l'analyse des résultats.
+	Github : Assez simple à prendre en main et la présence des actions github facilite le travail (création des workflows peut-être pas très évidente cependant).
+	Maven : La mise en place de ce projet a été soutenu par Maven avec la cohérence des outils, dépendances utilisés entre les différents postes de travail.
+	Docker : Ce n'est pas l'outil le plus pertinent pour l'utilisation de ce projet (création d'une librairie).
+	Badge : Mise en place des badges qui représente la partie la plus fun du projet.
+	
 ## Auteurs
 
 Morgane Henrion  
