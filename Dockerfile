@@ -5,14 +5,14 @@ RUN apt-get update
 
 RUN apt-get install -y git
 
-RUN apt-get install -y maven && echo 8
+RUN echo "8" | apt-get install -y maven
 
 #Recuperation des sources
 RUN git clone "https://github.com/Morgane-hen/devopsProjet"
 
-RUN cd devopsProjet
+WORKDIR "/devopsProjet"
 
 #Compile et run
 RUN mvn install
 
-RUN java -jar devopsProjet*.jar
+CMD java -jar devopsProjet.jar
