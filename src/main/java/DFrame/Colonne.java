@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Colonne<E> {
 
-	private ArrayList<E> colonne;
+	private final ArrayList<E> colonne;
 	private String label = "";
-	private String type = ""; //A reflechir
+	//private String type = ""; //A reflechir
 	
 	/*
 	 * cr�ation d'une colonne vide avec type
@@ -31,6 +31,7 @@ public class Colonne<E> {
 		this.label = _label;
 	}
 
+  
 	/*
 	 * Retourne une colonne 
 	 * */
@@ -71,18 +72,20 @@ public class Colonne<E> {
 	}
 	
 	/*
-	 * Ajoute un element à la colonne
-	 * @param : elem -> element à ajouter
-	 * */
-	public void addElem(int i,E elem) {
-		colonne.add(i, elem);
-	}
-	
-	/*
 	 * Retourne l'element a l'index i
 	 * @param : i -> element à retourner
 	 * */
-	public E getElem(int i) {
+	public E getElem(int i) throws Exception {
+		if(i < 0)
+		{
+			//exception
+			throw new IllegalArgumentException("L'index doit être supérieur ou égal à 0");
+		}
+		else if(i > colonneSize())
+		{
+			throw new IndexOutOfBoundsException("Index supérieur au nombre d'élément de la colonne");
+		}
+
 		return colonne.get(i);
 	}
 	
@@ -90,15 +93,15 @@ public class Colonne<E> {
 	 * Affiche le contenu d'une coone et son label
 	 * */
 	public void afficheColone() {
-		String affichage = this.label + " => ";
+		StringBuilder affichage = new StringBuilder(this.label + " => ");
 		for (int i=0; i<colonne.size(); i++) {
 			if(i == 0)
 			{
-				affichage += "elem: "+colonne.get(i)+ "\n";
+				affichage.append("elem: ").append(colonne.get(i)).append("\n");
 			}
 			else
 			{
-				affichage+="	elem: "+colonne.get(i)+ "\n";
+				affichage.append("	elem: ").append(colonne.get(i)).append("\n");
 			}
 			
 		}

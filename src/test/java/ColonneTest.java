@@ -2,7 +2,9 @@
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.Assert.assertThrows;
 
 import DFrame.Colonne;
 
@@ -39,9 +41,33 @@ class ColonneTest {
 	void addElemTest(){ //Rajouter des tests pour verifier que les elements ajouté sont forcément du même Type
 		Colonne<String> c = new Colonne<String>();
 		c.addElem("carotte");
-		assertEquals(c.getElem(0), "carotte", "L'element de la liste est carotte");
+		try {
+			assertEquals(c.getElem(0), "carotte", "L'element de la liste est carotte");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 		assertEquals(c.colonneSize(), 1, "La colonne contient 1 element");
 	}
 	
-	//Rajouter tests d'affichage
+	@Test
+	void getElemExceptionTest() {
+		Colonne c = new Colonne();
+		c.addElem("carotte");
+		assertThrows(IndexOutOfBoundsException.class , () -> {
+			c.getElem(40);
+		});
+		assertEquals(c.colonneSize(), 1, "La colonne contient 1 element");
+	}
+	
+	@Test
+	void getElemExceptionTest2() {
+		Colonne c = new Colonne();
+		c.addElem("carotte");
+		assertThrows(IllegalArgumentException.class , () -> {
+			c.getElem(-1);
+		});
+		assertEquals(c.colonneSize(), 1, "La colonne contient 1 element");
+	}	
 }

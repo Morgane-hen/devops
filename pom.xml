@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>IM2AG</groupId>
   <artifactId>devopsprojet</artifactId>
-  <version>0.3-SNAPSHOT</version>
+  <version>0.4-SNAPSHOT</version>
   
 
   <distributionManagement>
@@ -29,6 +29,20 @@
       		      <target>1.8</target>
             </configuration>
       	</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>main</mainClass>
+                        </manifest>
+                    </archive>
+                    <outputDirectory>.</outputDirectory>
+                </configuration>
+            </plugin>
+
 
         <!-- Maven CI Junit plugin-->
         <plugin>
