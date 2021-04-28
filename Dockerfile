@@ -5,7 +5,7 @@ RUN apt-get update
 
 RUN apt-get install -y git
 
-RUN apt-get install -y maven
+RUN apt-get install -y maven && echo 8
 
 #Recuperation des sources
 RUN git clone "https://github.com/Morgane-hen/devopsProjet"
