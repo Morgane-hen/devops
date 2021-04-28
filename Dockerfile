@@ -3,9 +3,10 @@ FROM ubuntu
 #Installation des outils necessaire
 RUN apt-get update
 
+RUN echo "8" | apt-get install -y maven
+
 RUN apt-get install -y git
 
-RUN echo "8" | apt-get install -y maven
 
 #Recuperation des sources
 RUN git clone "https://github.com/Morgane-hen/devopsProjet"
