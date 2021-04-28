@@ -15,7 +15,7 @@ Git - GitHub - Maven - Junit - Jacoco
 Vous êtes dessus, tout va bien
 
 ### 🟩 3 - Intégration continue
-color:blue Workflow
+	Workflow
  -> Sur la branche main uniquement, avec Maven :  
 - Compilation  
 - Tests JUnit  
