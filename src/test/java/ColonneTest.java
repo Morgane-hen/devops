@@ -2,7 +2,9 @@
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.Assert.assertThrows;
 
 import DFrame.Colonne;
 
@@ -49,5 +51,24 @@ class ColonneTest {
 		assertEquals(c.colonneSize(), 1, "La colonne contient 1 element");
 	}
 	
-	//Rajouter tests d'affichage
+	@Test
+	void getElemExceptionTest() {
+		Colonne c = new Colonne();
+		c.addElem("carotte");
+		assertThrows(IndexOutOfBoundsException.class , () -> {
+			c.getElem(40);
+		});
+		assertEquals(c.colonneSize(), 1, "La colonne contient 1 element");
+	}
+	
+	@Test
+	void getElemExceptionTest2() {
+		Colonne c = new Colonne();
+		c.addElem("carotte");
+		assertThrows(IllegalArgumentException.class , () -> {
+			c.getElem(-1);
+		});
+		assertEquals(c.colonneSize(), 1, "La colonne contient 1 element");
+	}
+	
 }

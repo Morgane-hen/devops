@@ -10,9 +10,9 @@ on:
     inputs:
       name:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
+        description: 'commit message'
         # Default value if no value is explicitly provided
-        default: 'World'
+        default: 'run'
         # Input has to be provided for the workflow to run
         required: true
 
@@ -35,6 +35,6 @@ jobs:
     - name: commit
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-       commit_message: Jacoco workflow run
+       commit_message: "Jacoco workflow : ${{ github.event.inputs.name }}"
     - name: push
       run: git push 
