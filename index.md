@@ -37,7 +37,7 @@ Mise en place de branches
   -> publication automatique d'un package lors d'une release  
  
 
-### 🟨 6 - Livraison continue (Docker)
+### 🟩 6 - Livraison continue (Docker)
 ⚙️Workflow <br />&nbsp;&nbsp;
   -> Création automatique d'une image, puis publication sur Docker Hub lors d'une release 
   https://hub.docker.com/repository/docker/fx73/devopsprojet
