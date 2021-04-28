@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"DFrame","l":"Colonne"},{"p":"DFrame","l":"Csv"},{"p":"DFrame","l":"Dataframe"},{"p":"<Unnamed>","l":"main"},{"p":"DFrame","l":"Pair"},{"p":"DFrame","l":"Statistiques"},{"p":"DFrame","l":"StatistiquesNumber"},{"p":"DFrame","l":"StatistiquesString"}];updateSearchResults();

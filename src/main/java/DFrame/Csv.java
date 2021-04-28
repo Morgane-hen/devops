@@ -11,7 +11,7 @@ public class Csv {
     private FileReader fr;
     private BufferedReader br;
 
-    /*
+    /**
      * constructeur a partir du chemin
      * @param : String chemin
      * */
@@ -41,7 +41,7 @@ public class Csv {
 
     }
     
-    /*
+    /**
      * Determine le type d'une colonne
      * */
     public void determineTypeColonne() throws IOException {
@@ -115,8 +115,11 @@ public class Csv {
             this.data = new Dataframe();
         }
     }
-    
-    /*Ajoute un element au fichier*/
+
+    /**
+     * Ajoute les éléments d'un fichier dans le dataframe
+     * @throws IOException : manipulation d'un buffer
+     */
     public void ajouteElem() throws IOException {
         String ligne = "";
         //récupération des lignes sous forme de string
@@ -184,6 +187,10 @@ public class Csv {
         }
     }
 
+    /**
+     *
+     * @return le dataframe
+     */
     public Dataframe getData() {
         return data;
     }

@@ -8,7 +8,7 @@ public class Colonne<E> {
 	private String label = "";
 	//private String type = ""; //A reflechir
 	
-	/*
+	/**
 	 * cr�ation d'une colonne vide avec type
 	 */
 	public Colonne()
@@ -16,7 +16,7 @@ public class Colonne<E> {
 		this.colonne = new ArrayList<E>();
 	}
 	
-	/*
+	/**
 	 * cr�ation d'une colonne a partir d'une arraylist
 	 */
 	public Colonne(ArrayList<E> elem, String _label)
@@ -32,7 +32,7 @@ public class Colonne<E> {
 	}
 
   
-	/*
+	/**
 	 * Retourne une colonne 
 	 * @return : colonne 
 	 * */
@@ -42,7 +42,7 @@ public class Colonne<E> {
 	
 	
 	
-	/*
+	/**
 	 * Retourne le label de la colonne
 	 * @return : label de la colonne
 	 * */
@@ -50,7 +50,7 @@ public class Colonne<E> {
 		return label;
 	}
 	
-	/*
+	/**
 	 * Met le label a une String
 	 * @param : label -> nom du label
 	 * */
@@ -58,7 +58,7 @@ public class Colonne<E> {
 		this.label = label;
 	}
 	
-	/*
+	/**
 	 * Retourne la taille de la colonne
 	 * @return : taille de la colonne
 	 * */
@@ -66,7 +66,7 @@ public class Colonne<E> {
 		return colonne.size();
 	}
 	
-	/*
+	/**
 	 * Ajoute un element à la colonne
 	 * @param : elem -> element à ajouter
 	 * */
@@ -74,7 +74,7 @@ public class Colonne<E> {
 		colonne.add(elem);
 	}
 	
-	/*
+	/**
 	 * Retourne l'element a l'index i
 	 * @param : i -> element à retourner
 	 * */
@@ -92,7 +92,7 @@ public class Colonne<E> {
 		return colonne.get(i);
 	}
 	
-	/*
+	/**
 	 * Affiche le contenu d'une coone et son label
 	 * */
 	public void afficheColone() {
@@ -111,14 +111,14 @@ public class Colonne<E> {
 		System.out.println(affichage);
 	}
 	
-	/*
+	/**
 	 * Affiche le premier élément de la colonne
 	 * */
 	public void afficherPremierElem() {
 		System.out.println(colonne.get(0));
 	}
 	
-	/*
+	/**
 	 * Affiche un élément de la colonne
 	 * @param : index -> numéro de l'élément à afficher
 	 * */
