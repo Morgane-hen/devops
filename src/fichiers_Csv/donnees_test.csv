@@ -1,4 +1,4 @@
-string;character;float;double;boolean
+string;character;integer;double;boolean
 BOULEAU;Fulbert;99;54;true
 LAGRANGE ;Bodon;-20;-42;false
 LE BIHAN ;Basile;73;7;true

@@ -13,33 +13,27 @@ public class Csv {
 
     public Csv(String chemin) throws IOException {
 
-        try
+        String[] type_fichier = chemin.split("\\.");
+        if (!type_fichier[type_fichier.length-1].equals("csv"))
         {
-            String[] type_fichier = chemin.split("\\.");
-            if (!type_fichier[type_fichier.length-1].equals("csv"))
-            {
-                //le fichier n'est pas au format csv, on déclenche une exception
-                throw (new IOException());
-            }
-            //ouverture du fichier pour lecture
-            fr = new FileReader(chemin);
-            br = new BufferedReader(fr);
-
-            //determine le type des colonnes
-            determineTypeColonne();
-
-            //ajoute chaque ligne dans le dataframe
-            ajouteElem();
-
-        } catch (IOException e) {
-            //erreur lors de l'ouverture du fichier ou lors de la lecture du fichier
-            System.out.println("Erreur lors de l'ouverture du fichier : ");
-            e.printStackTrace();
+            //le fichier n'est pas au format csv, on déclenche une exception
+            throw (new IOException());
         }
-        finally {
-            br.close();
-            fr.close();
-        }
+
+        //ouverture du fichier pour lecture
+        fr = new FileReader(chemin);
+        br = new BufferedReader(fr);
+
+        //determine le type des colonnes
+        determineTypeColonne();
+
+        //ajoute chaque ligne dans le dataframe
+        ajouteElem();
+
+        //erreur lors de l'ouverture du fichier ou lors de la lecture du fichier
+
+        br.close();
+        fr.close();
 
     }
 
