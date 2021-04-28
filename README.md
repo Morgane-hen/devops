@@ -15,8 +15,8 @@ Git - GitHub - Maven - Junit - Jacoco
 Vous êtes dessus, tout va bien
 
 ### 🟩 3 - Intégration continue
-	Workflow
- -> Sur la branche main uniquement, avec Maven :  
+⚙️Workflow <br />&nbsp;&nbsp;
+  -> Sur la branche main uniquement, avec Maven :  
 - Compilation  
 - Tests JUnit
 - Jacoco
@@ -33,24 +33,26 @@ Mise en place de branches
 - Feature CSV
 
 ### 🟩 5 - Livraison continue (Maven)
-	Workflow
- -> publication automatique d'un package lors d'une release  
+⚙️Workflow <br />&nbsp;&nbsp;
+  -> publication automatique d'un package lors d'une release  
  
 
 ### 🟨 6 - Livraison continue (Docker)
-<span style="color:blue">Workflow</span>
- -> publication automatique d'une image sur Docker Hub lors d'une release  
+⚙️Workflow <br />&nbsp;&nbsp;
+  -> Création automatique d'une image, puis publication sur Docker Hub lors d'une release 
+  https://hub.docker.com/repository/docker/fx73/devopsprojet
  
 ### 🟧 7 - Infrastructure-as-code et Cloud
 
+https://hub.docker.com/repository/docker/fx73/devopsprojet
 ### 🟩 8 - Insertion de Badges
 
 ![IM2AG](https://img.shields.io/badge/IM2AG-Seal%20of%20Quality-blue) ![GitHub last commit](https://img.shields.io/github/last-commit/Morgane-hen/devopsProjet) ![GitHub all releases](https://img.shields.io/github/downloads/Morgane-hen/devopsProjet/total) ![Lines of code](https://img.shields.io/tokei/lines/github/Morgane-hen/devopsProjet) ![GitHub top language](https://img.shields.io/github/languages/top/Morgane-hen/devopsProjet)  
 ![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/quality-score.png?b=main) ![Code Coverage](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/coverage.png?b=main) ![Build Status](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/build.png?b=main) ![Code Intelligence Status](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/code-intelligence.svg?b=main)
 
 ### 🟩 9 - Valorisation de votre bibliothèque
-<span style="color:blue">Workflow</span>
- -> Au changement du Readme, commit et push de son contenu sur la branche page : http://morgane-hen.github.io/devopsProjet
+⚙️Workflow <br />&nbsp;&nbsp;
+  -> Au changement du Readme, commit et push de son contenu sur la branche page : http://morgane-hen.github.io/devopsProjet
     Sur la branche page, un second workflow build le site internet
     
 ### 🟨 10 - Utilisation d’autres services Github
