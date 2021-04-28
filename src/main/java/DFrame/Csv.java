@@ -7,13 +7,11 @@ import java.io.IOException;
 public class Csv {
 
     private Dataframe data = new Dataframe();
-    private int nb_colonne = 0;
     private String[] type_colonnes;
     private FileReader fr;
     private BufferedReader br;
-    private String ligne;
 
-    public Csv(String chemin) throws Exception {
+    public Csv(String chemin) throws IOException {
 
         try
         {
@@ -21,7 +19,7 @@ public class Csv {
             if (!type_fichier[type_fichier.length-1].equals("csv"))
             {
                 //le fichier n'est pas au format csv, on déclenche une exception
-                throw (new Exception("Le fichier n'est pas au format csv : "+type_fichier[type_fichier.length-1]));
+                throw (new IOException());
             }
             //ouverture du fichier pour lecture
             fr = new FileReader(chemin);
@@ -46,7 +44,7 @@ public class Csv {
     }
 
     public void determineTypeColonne() throws IOException {
-        String ligne;
+        String ligne = "";
         //récupération des types des objets à l'aide de la première ligne
         if((ligne = br.readLine()) != null)
         {
@@ -58,8 +56,8 @@ public class Csv {
             }
             else
             {
-                this.nb_colonne = type_colonne.length;
-                this.type_colonnes = new String[this.nb_colonne];
+                int nb_colonne = type_colonne.length;
+                this.type_colonnes = new String[nb_colonne];
                 int indice_colonne = 0;
                 for (String colonne: type_colonne)
                 {
@@ -118,7 +116,7 @@ public class Csv {
     }
 
     public void ajouteElem() throws IOException {
-
+        String ligne = "";
         //récupération des lignes sous forme de string
         while((ligne = br.readLine()) != null)
         {
