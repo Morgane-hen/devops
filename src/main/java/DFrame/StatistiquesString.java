@@ -40,7 +40,7 @@ public class StatistiquesString implements Statistiques{
     }
 
 
-    public HashMap<String, Integer> getPourcentage_elem() {
+    public HashMap<String, Integer> getPourcentageElem() {
         return pourcentage_elem;
     }
 

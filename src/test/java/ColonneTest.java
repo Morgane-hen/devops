@@ -69,5 +69,16 @@ class ColonneTest {
 			c.getElem(-1);
 		});
 		assertEquals(c.colonneSize(), 1, "La colonne contient 1 element");
-	}	
+	}
+
+	@Test
+	void setLabel()
+	{
+		Colonne<String> c = new Colonne("Colonne_vide" );
+		c.addElem("Rimbault");
+		c.setLabel("Poete");
+
+		assertEquals(c.getLabel(), "Poete", "Le label doit être modifié");
+
+	}
 }

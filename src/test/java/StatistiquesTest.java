@@ -183,7 +183,29 @@ class StatistiquesTest {
 		expected.put("Cerise", 25);
 		expected.put("Pasteque", 12);
 		expected.put("Abricot", 12);
-		assertEquals(stats_s.getPourcentage_elem(), expected, "les pourcentages ne sont pas bons");
+		assertEquals(stats_s.getPourcentageElem(), expected, "les pourcentages ne sont pas bons");
+	}
+
+	@Test
+	void colonneString() throws Exception {
+		ArrayList<String> colonne2 = new ArrayList<String>();
+		colonne2.add("Pomme");
+		colonne2.add("Poire");
+		colonne2.add("Framboise");
+		colonne2.add("Peche");
+		colonne2.add("Cerise");
+		colonne2.add("Pasteque");
+		colonne2.add("Cerise");
+		colonne2.add("Abricot");
+		c2 = new Colonne<String>(colonne2, "col2");
+
+		StatistiquesString stats_s = new StatistiquesString(c2);
+
+		for (int i=0; i < stats_s.getElems().colonneSize(); i++)
+		{
+			assertEquals(c2.getElem(i), stats_s.getElems().getElem(i));
+		}
+
 	}
 
 }
