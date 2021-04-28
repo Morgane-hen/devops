@@ -15,11 +15,10 @@ Git - GitHub - Maven - Junit - Jacoco
 Vous êtes dessus, tout va bien
 
 ### 🟩 3 - Intégration continue
-
-Sur la branche main uniquement, avec Maven :  
+<span style="color:blue">Workflow</span>
+ -> Sur la branche main uniquement, avec Maven :  
 - Compilation  
 - Tests JUnit  
-https://github.com/Morgane-hen/devopsProjet/actions/workflows/maven.yml
 
 ### 🟩 4 - Travail Collaboratif
 
@@ -31,13 +30,15 @@ Mise en place de branches
 - Feature CSV
 
 ### 🟩 5 - Livraison continue (Maven)
+<span style="color:blue">Workflow</span>
+ -> publication automatique d'un package lors d'une release  
+ 
 
-Mise en place d'un workflow publiant automatiquement un package lors d'une release  
-https://github.com/Morgane-hen/devopsProjet/actions/workflows/release-package.yml
-
-### 🟧 6 - Livraison continue (Docker)
-
-### 🟥 7 - Infrastructure-as-code et Cloud
+### 🟨 6 - Livraison continue (Docker)
+<span style="color:blue">Workflow</span>
+ -> publication automatique d'une image sur Docker Hub lors d'une release  
+ 
+### 🟧 7 - Infrastructure-as-code et Cloud
 
 ### 🟩 8 - Insertion de Badges
 
@@ -45,13 +46,15 @@ https://github.com/Morgane-hen/devopsProjet/actions/workflows/release-package.ym
 ![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/quality-score.png?b=main) ![Code Coverage](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/coverage.png?b=main) ![Build Status](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/build.png?b=main) ![Code Intelligence Status](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/code-intelligence.svg?b=main)
 
 ### 🟩 9 - Valorisation de votre bibliothèque
-
-Site généré par le Readme via un workflow : http://morgane-hen.github.io/devopsProjet
-
+<span style="color:blue">Workflow</span>
+ -> Au changement du Readme, commit et push de son contenu sur la branche page : http://morgane-hen.github.io/devopsProjet
+    Sur la branche page, un second workflow build le site internet
+    
 ### 🟨 10 - Utilisation d’autres services Github
   Scrutinizer (2nd rangée de badges)
-	 Qualité de code et Jacoco Coverage statistiques
-
+	 -> Qualité de code et Jacoco Coverage statistiques
+     https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet
+     
 ## Fonctionnalitées
 	- Création d'un dataframe
 	- Création d'un dataframe à partir d'un fichier csv
@@ -73,3 +76,4 @@ Site généré par le Readme via un workflow : http://morgane-hen.github.io/devo
 Morgane Henrion  
 Florian Gauthier  
 François-Xavier Gros
+
