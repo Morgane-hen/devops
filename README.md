@@ -30,7 +30,7 @@ Mise en place de branches
 - Feature CSV
 
 ### 🟩 5 - Livraison continue (Maven)
-<span style="color:blue">Workflow</span>
+	Workflow
  -> publication automatique d'un package lors d'une release  
  
 
