@@ -30,7 +30,8 @@ public class Colonne<E> {
 		this.colonne = new ArrayList<E>();
 		this.label = _label;
 	}
-	
+
+  
 	/*
 	 * Retourne une colonne 
 	 * */

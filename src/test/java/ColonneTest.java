@@ -39,7 +39,7 @@ class ColonneTest {
 	
 	@Test
 	void addElemTest(){ //Rajouter des tests pour verifier que les elements ajouté sont forcément du même Type
-		Colonne c = new Colonne();
+		Colonne<String> c = new Colonne<String>();
 		c.addElem("carotte");
 		try {
 			assertEquals(c.getElem(0), "carotte", "L'element de la liste est carotte");
@@ -69,6 +69,5 @@ class ColonneTest {
 			c.getElem(-1);
 		});
 		assertEquals(c.colonneSize(), 1, "La colonne contient 1 element");
-	}
-	
+	}	
 }

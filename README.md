@@ -73,7 +73,7 @@ Mise en place de branches
 	- Sélection d'une colonne par son label
 	- Sélection d'une ligne par sa position
 	- Sélection de plusieurs lignes à partir d'une valeur donnée ( concerne les nombres et les chaînes de charactère)
-	  
+   
 ## Feedback
 	Scrutinizer : Très utile pour véririfer la couverture de code, les erreurs d'inattentions et les petits détails permettant d'améliorer la qualité, la compréhension du code. Le bémole de cet outil concerne le temps qui lui est dédié avant de pouvoir retourner l'analyse des résultats.
 	Github : Assez simple à prendre en main et la présence des actions github facilite le travail (création des workflows peut-être pas très évidente cependant).

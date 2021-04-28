@@ -1,4 +1,5 @@
 import DFrame.Colonne;
+import DFrame.Csv;
 import DFrame.Dataframe;
 import DFrame.StatistiquesNumber;
 import DFrame.StatistiquesString;
@@ -94,6 +95,7 @@ public class main {
 		
 		//Statistques sur les dataframes
 		//System.out.println("***************************Statistiques de Dataframe********************************");
+
 
 		Dataframe selection = data.selection("col1", 7, true, false, false);
 		selection.afficherColonnesDataframe();
