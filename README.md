@@ -18,7 +18,10 @@ Vous êtes dessus, tout va bien
 	Workflow
  -> Sur la branche main uniquement, avec Maven :  
 - Compilation  
-- Tests JUnit  
+- Tests JUnit
+- Jacoco
+	Pull Request/Merge Request
+- Review par au moins un autre collaboorateur avant merge et vérification des tests et du build de Maven.
 
 ### 🟩 4 - Travail Collaboratif
 
