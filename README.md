@@ -49,7 +49,7 @@ Mise en place de branches
 ![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/quality-score.png?b=main) ![Code Coverage](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/coverage.png?b=main) ![Build Status](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/build.png?b=main) ![Code Intelligence Status](https://scrutinizer-ci.com/g/Morgane-hen/devopsProjet/badges/code-intelligence.svg?b=main)
 
 ### 🟩 9 - Valorisation de votre bibliothèque
-<span style="color:blue">Workflow</span>
+<p style="color:blue">Workflow</p>
  -> Au changement du Readme, commit et push de son contenu sur la branche page : http://morgane-hen.github.io/devopsProjet
     Sur la branche page, un second workflow build le site internet
     
