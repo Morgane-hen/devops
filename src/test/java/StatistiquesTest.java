@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -155,6 +156,34 @@ class StatistiquesTest {
 		repete.add(new Pair("Cerise", 2));
 		assertEquals(repete.get(0).getRepet(), stats_s.plusGrossesRepetes().get(0).getRepet());
 		assertEquals(repete.get(0).getClef(), stats_s.plusGrossesRepetes().get(0).getClef());
+	}
+
+	@Test
+	void pourcentageElement()
+	{
+		ArrayList<String> colonne2 = new ArrayList<String>();
+		colonne2.add("Pomme");
+		colonne2.add("Poire");
+		colonne2.add("Framboise");
+		colonne2.add("Peche");
+		colonne2.add("Cerise");
+		colonne2.add("Pasteque");
+		colonne2.add("Cerise");
+		colonne2.add("Abricot");
+		c2 = new Colonne<String>(colonne2, "col2");
+
+		StatistiquesString stats_s = new StatistiquesString(c2);
+		stats_s.calculStats();
+
+		HashMap<String, Integer> expected = new HashMap<>();
+		expected.put("Pomme", 12);
+		expected.put("Poire", 12);
+		expected.put("Framboise", 12);
+		expected.put("Peche", 12);
+		expected.put("Cerise", 25);
+		expected.put("Pasteque", 12);
+		expected.put("Abricot", 12);
+		assertEquals(stats_s.getPourcentage_elem(), expected, "les pourcentages ne sont pas bons");
 	}
 
 }
