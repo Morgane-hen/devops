@@ -53,7 +53,21 @@ Site généré par le Readme via un workflow : http://morgane-hen.github.io/devo
 	 Qualité de code et Jacoco Coverage statistiques
 
 ## Fonctionnalitées
-
+	- Création d'un dataframe
+	- Création d'un dataframe à partir d'un fichier csv
+	- Création d'un dataframe à partir des colonnes d'un autres Dataframe
+	- Création d'un dataframe à partir des lignes d'un autres Dataframe
+	- Affichage d'un dataframe
+	- Affichage des premières lignes du dataframe
+	- Affichage des dernières lignes du dataframe
+	- Affichage du mot le plus répété
+	- Pourcentage d'apparition de chaque mot ( concerne uniquement les chaînes de charactères)
+	- Calcul de la moyenne d'une colonne (concerne uniquement les nombres)
+	- Calcul de l'écart-type d'une colonne (concerne uniquement les nombres)
+	- Sélection d'une colonne par son label
+	- Sélection d'une ligne par sa position
+	- Sélection de plusieurs lignes à partir d'une valeur donnée ( concerne les nombres et les chaînes de charactère)
+	  
 ## Auteurs
 
 Morgane Henrion  
