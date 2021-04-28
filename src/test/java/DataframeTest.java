@@ -57,7 +57,15 @@ class DataframeTest {
 		d.addColonne(new Colonne(new ArrayList<String>(), "colonne"));
 		assertEquals(d.getColonne("colonne").getLabel(), "colonne", "Le label de la colonne est bien colonne" );
 	}
-	
+
+	@Test
+	void getColonneLabelVide()
+	{
+		Dataframe d = new Dataframe();
+		d.addColonne(new Colonne(new ArrayList<String>(), "colonne"));
+		assertNull(d.getColonne(""));
+	}
+
 	@Test
 	void getColonneIndexTest() {
 		Dataframe d = new Dataframe();
@@ -65,6 +73,7 @@ class DataframeTest {
 		d.addColonne(new Colonne<Integer>(new ArrayList<Integer>(), "colonne2"));
 		assertEquals(d.getColonne(0).getLabel(), "colonne", "Le label de la colonne 1 est bien colonne" );
 	}
+
 	
 	@Test
 	void nbLignesTest() {
@@ -110,7 +119,7 @@ class DataframeTest {
 	}
 	
 	@Test
-	void createDataframeFromLinesTest() {
+	void createDataframeFromLinesTest() throws Exception {
 		ArrayList<String> a = new ArrayList<String>();
 		a.add("Oui");
 		a.add("Non");
@@ -135,12 +144,61 @@ class DataframeTest {
 		assertEquals(nouveau.getColonne(0).getElem(0), "Oui", "Le premier Elements de la ligne est Oui");
 		assertEquals(nouveau.getColonne(1).getElem(0), "Demain", "Le Deuxieme est Demain");
 	}
-	
+
+	@Test
+	void copievide()
+	{
+		ArrayList<String> a = new ArrayList<String>();
+		a.add("Oui");
+		a.add("Non");
+		Colonne<String> c = new Colonne<String>(a, "col1");
+
+		ArrayList<String> a2 = new ArrayList<String>();
+		a2.add("Demain");
+		a2.add("Hier");
+		Colonne<String> c2 = new Colonne<String>(a2, "col2");
+
+		Dataframe d = new Dataframe();
+		d.addColonne(c);
+		d.addColonne(c2);
+
+		Dataframe receveur = d.copieVide();
+
+		for(int i = 0; i< receveur.getDataframe().size(); i++)
+		{
+			assertEquals(receveur.getColonne(i).getLabel(), d.getColonne(i).getLabel(), "Les labels doivent être identiques");
+		}
+	}
+
+	@Test
+	void addElemException()
+	{
+		ArrayList<String> a = new ArrayList<String>();
+		a.add("Oui");
+		a.add("Non");
+		Colonne<String> c = new Colonne<String>(a, "col1");
+
+		ArrayList<String> a2 = new ArrayList<String>();
+		a2.add("Demain");
+		a2.add("Hier");
+		Colonne<String> c2 = new Colonne<String>(a2, "col2");
+
+		Dataframe d = new Dataframe();
+		d.addColonne(c);
+		d.addColonne(c2);
+
+		Dataframe receveur = d.copieVide();
+		assertThrows(IllegalArgumentException.class , () -> {
+			d.ajouteLigne(receveur, -1);
+			;
+		});
+
+	}
+
 	/*******************************Test de sélection***************************/
 
 	@Test
-	void selectionEqualDouble()
-	{
+	void selectionEqualDouble() throws Exception {
 		ArrayList<Double> colonne1 = new ArrayList<Double>();
 		colonne1.add(1.0);
 		colonne1.add(2.7);
@@ -174,7 +232,7 @@ class DataframeTest {
 	}
 
 	@Test
-	void selectionEqualInteger()
+	void selectionEqualInteger() throws Exception
 	{
 		ArrayList<Integer> colonne1 = new ArrayList<Integer>();
 		colonne1.add(27);
@@ -208,7 +266,8 @@ class DataframeTest {
 		assertEquals(res.getColonne(1).getElem(0), "Pomme");
 	}
 
-	void selectionEqualString()
+	@Test
+	void selectionEqualString() throws Exception
 	{
 		ArrayList<Integer> colonne1 = new ArrayList<Integer>();
 		colonne1.add(27);
@@ -243,7 +302,7 @@ class DataframeTest {
 	}
 
 	@Test
-	void selectioninfDouble()
+	void selectioninfDouble() throws Exception
 	{
 		ArrayList<Double> colonne1 = new ArrayList<Double>();
 		colonne1.add(1.0);
@@ -282,7 +341,7 @@ class DataframeTest {
 	}
 
 	@Test
-	void selectionSupInteger()
+	void selectionSupInteger() throws Exception
 	{
 		ArrayList<Integer> colonne1 = new ArrayList<Integer>();
 		colonne1.add(27);
@@ -316,5 +375,23 @@ class DataframeTest {
 		assertEquals(res.getColonne(1).getElem(0), "Pomme");
 		assertEquals(res.getColonne(0).getElem(1), 8);
 		assertEquals(res.getColonne(1).getElem(1), "Abricot");
+	}
+
+	@Test
+	void selectionVide()
+	{
+		ArrayList<Integer> a = new ArrayList<Integer>();
+		Colonne<Integer> c = new Colonne<Integer>(a, "col1");
+
+		ArrayList<String> a2 = new ArrayList<String>();
+		a2.add("Demain");
+		a2.add("Hier");
+		Colonne<String> c2 = new Colonne<String>(a2, "col2");
+
+		Dataframe d = new Dataframe();
+		d.addColonne(c);
+		d.addColonne(c2);
+
+		assertEquals(d.selection("col1", 1, false, false, true).nbLignes(), 0, "Aucune ligne ne doit être présente");
 	}
 }

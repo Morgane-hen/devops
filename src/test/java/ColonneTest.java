@@ -39,7 +39,13 @@ class ColonneTest {
 	void addElemTest(){ //Rajouter des tests pour verifier que les elements ajouté sont forcément du même Type
 		Colonne c = new Colonne();
 		c.addElem("carotte");
-		assertEquals(c.getElem(0), "carotte", "L'element de la liste est carotte");
+		try {
+			assertEquals(c.getElem(0), "carotte", "L'element de la liste est carotte");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 		assertEquals(c.colonneSize(), 1, "La colonne contient 1 element");
 	}
 	

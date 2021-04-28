@@ -6,7 +6,7 @@ import DFrame.StatistiquesString;
 import java.util.ArrayList;
 
 public class main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		//colonnes
 		ArrayList<Double> colonne1 = new ArrayList<Double>();
 		colonne1.add(1.0);
@@ -78,8 +78,15 @@ public class main {
 		indexs.add(2); //car on commence le compte à 0
 		indexs.add(4);
 		indexs.add(6);
-		Dataframe anotherData = data.createNewDataframeFromLines(indexs);
-		anotherData.afficherLignesDataframe();
+		try
+		{
+			Dataframe anotherData = data.createNewDataframeFromLines(indexs);
+			anotherData.afficherLignesDataframe();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 		System.out.println("");
 		System.out.println("");
 		System.out.println("***************************Fin des créations de Dataframe***************************");

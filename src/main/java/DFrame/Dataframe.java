@@ -70,6 +70,7 @@ public class Dataframe<E> {
 		}
 	}
 
+
 	/**
 	 *
 	 * @param index : numéro de la colonne
@@ -121,7 +122,7 @@ public class Dataframe<E> {
 	/**
 	 * Afficher les 5 premières lignes du dataframe
 	 */
-	public void afficherPremieresLignes() {
+	public void afficherPremieresLignes() throws Exception{
 
 		int j = 0;
 		boolean fini = false;
@@ -152,10 +153,12 @@ public class Dataframe<E> {
 
 		int j = 5;
 
+		//on affiche un nombre de ligne < ou = à 5
 		for (Colonne c: this.dataf)
 		{
 			if(c.colonneSize() < j)
 			{
+				//la colonne contient moins d'élément, on affichera moins d'élément
 				j = c.colonneSize();
 			}
 		}
@@ -197,7 +200,7 @@ public class Dataframe<E> {
 	 * @param index :
 	 * @return : nouveau dataframe rempli à partir de celui-ci
 	 */
-	public Dataframe createNewDataframeFromLines( ArrayList<Integer> index) {
+	public Dataframe createNewDataframeFromLines( ArrayList<Integer> index) throws Exception {
 		
 		Dataframe data = new Dataframe();
 		int nb = this.nbColonnes();
@@ -227,6 +230,7 @@ public class Dataframe<E> {
 	{
 		Dataframe res = new Dataframe();
 
+		//copie du label de chaque colonne
 		for (Colonne c: this.dataf)
 		{
 				Colonne c_bis = new Colonne(c.getLabel());
@@ -241,12 +245,12 @@ public class Dataframe<E> {
 	 * @param receveur : dataframe qui recoit les données de this
 	 * @param index_ligne : ligne de this qu'il faut ajouter dans receveur
 	 */
-	public void ajouteLigne(Dataframe receveur, int index_ligne)
-	{
+	public void ajouteLigne(Dataframe receveur, int index_ligne) throws Exception {
+
 		if(index_ligne < 0)
 		{
 			//exception
-			System.out.println("erreur : "+index_ligne);
+			throw new IllegalArgumentException("L'index doit être supérieur ou égal à 0");
 		}
 
 		for (Colonne c: this.dataf)
@@ -285,7 +289,11 @@ public class Dataframe<E> {
 				if((new_elem == new_borne && equal) || (new_elem < new_borne && inf) || (new_elem > new_borne && sup))
 				{
 					//on ajoute la ligne complète au nouveau dataframe
-					this.ajouteLigne(data, cpt);
+					try {
+						this.ajouteLigne(data, cpt);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 				cpt++;
 			}
@@ -317,8 +325,13 @@ public class Dataframe<E> {
 				if(elem.equals(equal))
 				{
 					//on ajoute la ligne complète au nouveau dataframe
-					this.ajouteLigne(data, cpt);
-					data.getColonne(0).getLabel();
+					try {
+						this.ajouteLigne(data, cpt);
+						data.getColonne(0).getLabel();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+
 				}
 				cpt++;
 			}

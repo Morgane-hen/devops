@@ -71,18 +71,20 @@ public class Colonne<E> {
 	}
 	
 	/*
-	 * Ajoute un element à la colonne
-	 * @param : elem -> element à ajouter
-	 * */
-	public void addElem(int i,E elem) {
-		colonne.add(i, elem);
-	}
-	
-	/*
 	 * Retourne l'element a l'index i
 	 * @param : i -> element à retourner
 	 * */
-	public E getElem(int i) {
+	public E getElem(int i) throws Exception {
+		if(i < 0)
+		{
+			//exception
+			throw new IllegalArgumentException("L'index doit être supérieur ou égal à 0");
+		}
+		else if(i > colonneSize())
+		{
+			throw new IndexOutOfBoundsException("Index supérieur au nombre d'élément de la colonne");
+		}
+
 		return colonne.get(i);
 	}
 	

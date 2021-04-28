@@ -77,7 +77,7 @@ class StatistiquesTest {
 	}
 	
 	@Test
-	void StatistiquesMots() {
+	void StatistiquesMots() throws Exception {
 
 		ArrayList<String> colonne2 = new ArrayList<String>();
 		colonne2.add("Pomme");
@@ -117,7 +117,7 @@ class StatistiquesTest {
 		assertEquals(repete.get(0).getClef(), stats_s.plusGrossesRepetes().get(0).getClef());
 	}
 
-	void StatistiquesMotsPourcentages() {
+	void StatistiquesMotsPourcentages() throws Exception{
 
 		ArrayList<String> colonne2 = new ArrayList<String>();
 		colonne2.add("Pomme");
