@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CsvTest {
 	
 	@Test
-	void ConstructeurTest() {
+	void ConstructeurTest() throws Exception {
 		Csv fichier = new Csv("src/fichiers_Csv/donnees_test.csv");
 		ArrayList<Colonne> colonnes = fichier.getData().getDataframe();
 		int cpt = 0;
@@ -22,7 +22,7 @@ class CsvTest {
 	}
 	
 	@Test
-	void Constructeur2Test() {
+	void Constructeur2Test() throws Exception {
 		Csv fichier = new Csv("src/fichiers_Csv/donnees_incompletes_test.csv");
 		ArrayList<Colonne> colonnes = fichier.getData().getDataframe();
 		int cpt = 0;
@@ -34,7 +34,7 @@ class CsvTest {
 	}
 
 	@Test
-	void Constructeur3Test() {
+	void Constructeur3Test() throws Exception {
 		Csv fichier = new Csv("src/fichiers_Csv/donnees_test_vide.csv");
 
 		assertEquals(fichier.getData().getDataframe().size(), 1, "Une colonne créée automatiquement si pas de données");
