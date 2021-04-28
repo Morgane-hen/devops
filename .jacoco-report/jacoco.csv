@@ -1,8 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-devopsprojet,DFrame,Dataframe,141,96,15,9,27,26,12,11,4,7
-devopsprojet,DFrame,StatistiquesString,84,184,5,13,13,36,6,11,3,5
-devopsprojet,DFrame,StatistiquesNumber.type_donnees,0,21,0,0,0,1,0,1,0,1
-devopsprojet,DFrame,StatistiquesNumber,33,305,2,16,5,67,3,22,1,14
-devopsprojet,DFrame,Pair,0,15,0,0,0,6,0,3,0,3
-devopsprojet,DFrame,Colonne,77,44,6,0,12,14,6,7,3,7
-devopsprojet,default,main,220,0,0,0,60,0,2,0,2,0
