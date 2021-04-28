@@ -11,6 +11,10 @@ public class Csv {
     private FileReader fr;
     private BufferedReader br;
 
+    /*
+     * constructeur a partir du chemin
+     * @param : String chemin
+     * */
     public Csv(String chemin) throws IOException {
 
         String[] type_fichier = chemin.split("\\.");
@@ -36,7 +40,10 @@ public class Csv {
         fr.close();
 
     }
-
+    
+    /*
+     * Determine le type d'une colonne
+     * */
     public void determineTypeColonne() throws IOException {
         String ligne = "";
         //récupération des types des objets à l'aide de la première ligne
@@ -108,7 +115,8 @@ public class Csv {
             this.data = new Dataframe();
         }
     }
-
+    
+    /*Ajoute un element au fichier*/
     public void ajouteElem() throws IOException {
         String ligne = "";
         //récupération des lignes sous forme de string

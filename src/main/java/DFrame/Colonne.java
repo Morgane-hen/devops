@@ -34,6 +34,7 @@ public class Colonne<E> {
   
 	/*
 	 * Retourne une colonne 
+	 * @return : colonne 
 	 * */
 	public ArrayList<E> getColonne(){
 		return colonne;
@@ -43,6 +44,7 @@ public class Colonne<E> {
 	
 	/*
 	 * Retourne le label de la colonne
+	 * @return : label de la colonne
 	 * */
 	public String getLabel() {
 		return label;
@@ -58,6 +60,7 @@ public class Colonne<E> {
 	
 	/*
 	 * Retourne la taille de la colonne
+	 * @return : taille de la colonne
 	 * */
 	public int colonneSize() {
 		return colonne.size();
